@@ -56,7 +56,7 @@
     "test:integration": "mocha -r ts-node/register test/integrationAdapter.ts --exit",
     "test": "mocha -r ts-node/register test/*.ts --exit",
     "lint": "eslint src/",
-    "release": "release-script -y"
+    "release": "release-script"
   },
   "bugs": {
     "url": "https://github.com/iobroker-community-adapters/ioBroker.denon/issues"
