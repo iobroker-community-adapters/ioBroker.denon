@@ -61,7 +61,8 @@
       "zh-cn": "控制你的天龙马兰士或AV接收器"
     },
     "authors": [
-      "Moritz Heusinger <moritz.heusinger@gmail.com>"
+      "Moritz Heusinger <moritz.heusinger@gmail.com>",
+      "iobroker-community-adapters <iobroker-community-adapters@gmx.de>"
     ],
     "tier": 2,
     "licenseInformation": {
@@ -75,7 +76,7 @@
     "enabled": true,
     "compact": true,
     "messagebox": true,
-    "extIcon": "https://raw.githubusercontent.com/foxriver76/ioBroker.denon/master/admin/denon.png",
+    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.denon/master/admin/denon.png",
     "keywords": [
       "denon",
       "marantz",
@@ -83,7 +84,7 @@
       "harmony",
       "audio"
     ],
-    "readme": "https://github.com/foxriver76/ioBroker.denon/blob/master/README.md",
+    "readme": "https://github.com/iobroker-community-adapters/ioBroker.denon/blob/master/README.md",
     "docs": {
       "en": "README.md",
       "de": "docs/de/README.md"
@@ -94,7 +95,12 @@
     "dataSource": "push",
     "dependencies": [
       {
-        "js-controller": ">=5.0.0"
+        "js-controller": ">=7.2.5"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=8.3.5"
       }
     ]
   },
