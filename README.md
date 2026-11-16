@@ -898,18 +898,17 @@ and info.connection. Additional the following states are created for each zone 2
     
     *Boolean value which indicates and controls the audio signal input of your AVR.*  
    
-## Missing functions & bugs
-If you are missing any functions or detected a bug, please open an [issue](https://github.com/foxriver76/ioBroker.denon/issues).
+## Credits
 
-The adapter is tested with an DENON AVR-X1200W and a Marantz SR5009.
+This adapter would not have been possible without the great work of @foxriver76 (https://github.com/foxriver76), who developed former releases of this adapter.
 
 ## Changelog
 <!--
 	Placeholder for the next version (at the beginning of the line):
-	### __WORK IN PROGRESS__
+	### **WORK IN PROGRESS**
 -->
-
 ### **WORK IN PROGRESS**
+- (mcm1957) Adapter has been migrated to iobroker-communities organisation
 - (copilot) Adapter requires js-controller >= 7.2.5 now
 - (copilot) Adapter requires admin >= 8.3.5 now
 - (copilot) Adapter requires Node.js >= 22.19.0 now
