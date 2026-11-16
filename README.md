@@ -908,6 +908,12 @@ The adapter is tested with an DENON AVR-X1200W and a Marantz SR5009.
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
+
+### **WORK IN PROGRESS**
+- (copilot) Adapter requires js-controller >= 7.2.5 now
+- (copilot) Adapter requires admin >= 8.3.5 now
+- (copilot) Adapter requires Node.js >= 22.19.0 now
+
 ### 1.15.12 (2024-07-23)
 * (foxriver76) updated dependencies
 * (foxriver76) added tier and license information
@@ -1215,6 +1221,8 @@ The adapter is tested with an DENON AVR-X1200W and a Marantz SR5009.
 ## License
 The MIT License (MIT)
 
+
+Copyright (c) 2026 iobroker-community-adapters <iobroker-community-adapters@gmx.de>  
 Copyright (c) 2018-2024 Moritz Heusinger <moritz.heusinger@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
