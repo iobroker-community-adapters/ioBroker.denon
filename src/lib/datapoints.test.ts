@@ -75,6 +75,8 @@ describe('datapoints', () => {
             expect(m('PSDIL OFF')).to.deep.equal(['main.audio.dialogLevelAdjust', false]);
             expect(m('PSDIL 505')).to.deep.equal(['main.audio.dialogLevel', 0.5]);
             expect(m('PSDEH MED')).to.deep.equal(['main.audio.dialogEnhancer', 'MED']);
+            expect(m('PSFRONT A+B')).to.deep.equal(['main.audio.frontSpeaker', 'A+B']);
+            expect(m('PSFRONT SPB')).to.deep.equal(['main.audio.frontSpeaker', 'SPB']);
             expect(m('PSNEURAL ON')).to.deep.equal(['main.audio.neuralX', true]);
             expect(m('PSCINEMA EQ.OFF')).to.deep.equal(['main.audio.cinemaEq', false]);
             expect(m('PSGEQ OFF')).to.deep.equal(['main.audio.graphicEq', false]);
@@ -150,6 +152,8 @@ describe('datapoints', () => {
             expect(cmd('main.audio.containment', 3)).to.deep.equal(['PSCNTAMT 03']);
             expect(cmd('main.audio.audioDelay', 40)).to.deep.equal(['PSDELAY 040']);
             expect(cmd('main.audio.dialogEnhancer', 'High')).to.deep.equal(['PSDEH HIGH']);
+            expect(cmd('main.audio.frontSpeaker', 'SPB')).to.deep.equal(['PSFRONT SPB']);
+            expect(cmd('main.audio.frontSpeaker', 'A+B')).to.deep.equal(['PSFRONT A+B']);
             expect(cmd('main.audio.cinemaEq', true)).to.deep.equal(['PSCINEMA EQ.ON']);
             expect(cmd('main.audio.multEq', 'Flat')).to.deep.equal(['PSMULTEQ:FLAT']);
             expect(cmd('main.video.hdmiResolution', '1080p 24 Hz')).to.deep.equal(['VSSCH10P24']);
