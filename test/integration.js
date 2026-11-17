@@ -1,5 +1,5 @@
-const path = require('path');
-const net = require('net');
+const path = require('node:path');
+const net = require('node:net');
 const { expect } = require('chai');
 const { tests } = require('@iobroker/testing');
 
