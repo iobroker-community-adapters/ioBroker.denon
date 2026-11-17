@@ -201,6 +201,9 @@ describe('telnet', () => {
             await waitFor(() => avr.sockets.length === 1);
             avr.dropClients();
             await reconnected;
+            // @KI_HINWEIS: The client can report "connected" before the server side has counted the socket
+            // (seen on macOS runners with Node.js 26), so wait for the server instead of asserting at once
+            await waitFor(() => avr.connections === 2);
             expect(avr.connections).to.equal(2);
             expect(c.connected).to.equal(true);
         });
