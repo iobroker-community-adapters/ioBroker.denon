@@ -218,6 +218,7 @@ Der Video-Code besteht aus `0`, der Ziffer für den Eingang und der Ziffer für 
 | `subwooferLevelAdjust`, `subwooferLevel`, `subwoofer2Level` (+ `Up`/`Down`) | Subwoofer-Pegel ein/aus und in dB |
 | `lfe` | LFE-Pegel (Effektkanal) 0 ... -10 dB |
 | `dialogLevelAdjust`, `dialogLevel`, `dialogControl` | Dialogpegel ein/aus und in dB, Dialog-Verstärkung 0 ... 6 (DTS:X) |
+| `dialogEnhancer` | Dialog Enhancer (Sprachverständlichkeit) `OFF`, `LOW`, `MED`, `HIGH` (neuere Modelle) |
 | `cinemaEq`, `neuralX`, `graphicEq`, `headphoneEq`, `loudness` | Cinema EQ, DTS Neural:X, Grafik-EQ, Kopfhörer-EQ, Loudness Management |
 | `audioDelay` | Audio-Verzögerung (Lippensynchronität) 0 ... 300 ms |
 | `audioRestorer` | Klangverbesserung für komprimierte Musik |

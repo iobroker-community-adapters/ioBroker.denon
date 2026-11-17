@@ -507,6 +507,10 @@ class Denon extends utils.Adapter {
                 // jsonConfig selectSendTo expects an array of { label, value }
                 this.sendTo(obj.from, obj.command, devices, obj.callback);
             },
+            {
+                setTimeout: (cb, ms) => this.setTimeout(cb, ms),
+                clearTimeout: handle => this.clearTimeout(handle as ioBroker.Timeout),
+            },
         );
     }
 

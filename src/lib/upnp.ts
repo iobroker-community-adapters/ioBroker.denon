@@ -2,6 +2,14 @@ import http from 'node:http';
 import dgram from 'node:dgram';
 import { networkInterfaces } from 'node:os';
 
+/** Timer functions of the adapter */
+export interface ScanTimers {
+    /** adapter.setTimeout */
+    setTimeout: (cb: () => void, ms: number) => unknown;
+    /** adapter.clearTimeout */
+    clearTimeout: (handle: unknown) => void;
+}
+
 interface SSDPResultEntry {
     ip: string;
     data?: any;
@@ -81,16 +89,18 @@ export function httpGet(
  * @param readXml if LOCATION xml should be read
  * @param timeout timeout in ms (default 1000)
  * @param callback return result
+ * @param timers timer functions of the adapter, so the scan is cleaned up on unload
  */
 export function ssdpScan(
     text: string,
     readXml: boolean,
     timeout: number,
     callback: (err: Error | null, res: SSDPResultEntry[]) => void,
+    timers: ScanTimers,
 ): void {
     timeout = timeout || 1_000;
 
-    let timer: NodeJS.Timeout | undefined | null;
+    let timer: unknown;
 
     const interfaces = networkInterfaces();
     const sockets: any[] = [];
@@ -107,7 +117,7 @@ export function ssdpScan(
                         // Send to port 1900 UDP request
                         socket.on('error', err => {
                             if (timer) {
-                                clearTimeout(timer);
+                                timers.clearTimeout(timer);
                                 timer = null;
                             }
                             if (callback) {
@@ -196,7 +206,8 @@ export function ssdpScan(
         });
     });
 
-    timer = setTimeout(() => {
+    // @KI_HINWEIS: adapter timers instead of plain setTimeout, so a scan running during unload is cleared (repochecker S5005)
+    timer = timers.setTimeout(() => {
         timer = null;
 
         sockets.forEach(socket => socket.close());

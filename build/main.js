@@ -460,6 +460,10 @@ class Denon extends utils.Adapter {
         }
         this.log.info(`[DISCOVERY] Found ${devices.length} device(s)`);
         this.sendTo(obj.from, obj.command, devices, obj.callback);
+      },
+      {
+        setTimeout: (cb, ms) => this.setTimeout(cb, ms),
+        clearTimeout: (handle) => this.clearTimeout(handle)
       }
     );
   }

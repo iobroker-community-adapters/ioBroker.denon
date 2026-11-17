@@ -54,7 +54,7 @@ function httpGet(link, timeout, callback) {
     callback = null;
   });
 }
-function ssdpScan(text, readXml, timeout, callback) {
+function ssdpScan(text, readXml, timeout, callback, timers) {
   timeout = timeout || 1e3;
   let timer;
   const interfaces = (0, import_node_os.networkInterfaces)();
@@ -69,7 +69,7 @@ function ssdpScan(text, readXml, timeout, callback) {
             socket.unref();
             socket.on("error", (err) => {
               if (timer) {
-                clearTimeout(timer);
+                timers.clearTimeout(timer);
                 timer = null;
               }
               if (callback) {
@@ -138,7 +138,7 @@ function ssdpScan(text, readXml, timeout, callback) {
       }
     });
   });
-  timer = setTimeout(() => {
+  timer = timers.setTimeout(() => {
     timer = null;
     sockets.forEach((socket) => socket.close());
     if (callback) {

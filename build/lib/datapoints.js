@@ -378,6 +378,8 @@ const DATAPOINTS = [
   button("main.audio.subwoofer2LevelDown", "PSSWL2 DOWN", "Subwoofer 2 level down", "main.audio.subwoofer2Level"),
   onoff("main.audio.dialogLevelAdjust", "PSDIL ", "Dialog level adjustment", "switch", { pattern: ON_OFF }),
   db("main.audio.dialogLevel", "PSDIL ", "Dialog level", -12, 12),
+  // @KI_HINWEIS: Dialog Enhancer (issue #368, e.g. AVR-X1700H), CY2026 protocol "PSDEH OFF/LOW/MED/HIGH"
+  enumeration("main.audio.dialogEnhancer", "PSDEH ", "Dialog enhancer", { OFF: "Off", LOW: "Low", MED: "Medium", HIGH: "High" }),
   int("main.audio.dialogControl", "PSDIC ", "Dialog control", { min: 0, max: 6 }, { pattern: /^\d{2}$/ }),
   onoff("main.audio.cinemaEq", "PSCINEMA EQ.", "Cinema EQ"),
   onoff("main.audio.neuralX", "PSNEURAL ", "DTS Neural:X"),
@@ -738,6 +740,7 @@ const SETTING_QUERIES = [
   "PSSWL ?",
   "PSDIL ?",
   "PSDIC ?",
+  "PSDEH ?",
   "PSCINEMA EQ. ?",
   "PSNEURAL ?",
   "PSGEQ ?",
