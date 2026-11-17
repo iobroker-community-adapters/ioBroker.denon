@@ -5,12 +5,12 @@ name: Test and Release
 on:
   push:
     branches:
-      - 'master'
+      - "master"
     tags:
       # normal versions
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - "v[0-9]+.[0-9]+.[0-9]+"
       # pre-releases
-      - 'v[0-9]+.[0-9]+.[0-9]+-**'
+      - "v[0-9]+.[0-9]+.[0-9]+-**"
   pull_request: {}
 
 # Cancel previous PR/branch runs when a new commit is pushed
@@ -28,13 +28,13 @@ jobs:
     steps:
       - uses: ioBroker/testing-action-check@v2
         with:
-          node-version: '22.x'
+          node-version: '24.x'
           type-checking: true
           lint: true
 
-  # Runs adapter tests on all supported node versions and OSes
   adapter-tests:
     needs: [check-and-lint]
+
     if: contains(github.event.head_commit.message, '[skip ci]') == false
 
     runs-on: ${{ matrix.os }}
@@ -49,13 +49,16 @@ jobs:
           node-version: ${{ matrix.node-version }}
           os: ${{ matrix.os }}
           build: true
+          extra-tests: npm run test:js
 
-  # Deploys the final package to NPM via trusted publishing (no NPM token required)
-  # See https://docs.npmjs.com/trusted-publishers
   deploy:
     needs: [check-and-lint, adapter-tests]
 
-    # Trigger this step only when a commit on any branch is tagged with a version number
+    # Permissions are required to create GitHub releases and npm trusted publishing
+    permissions:
+      contents: write
+      id-token: write
+
     if: |
       contains(github.event.head_commit.message, '[skip ci]') == false &&
       github.event_name == 'push' &&
@@ -63,14 +66,13 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    # Write permissions are required to create GitHub releases, id-token for npm provenance
-    permissions:
-      id-token: write
-      contents: write
-
     steps:
       - uses: ioBroker/testing-action-deploy@v1
         with:
-          node-version: '22.x'
+          node-version: '24.x'
           build: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          # sentry-token: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          # sentry-project: 'iobroker-denon'
+          # sentry-version-prefix: 'iobroker.denon'

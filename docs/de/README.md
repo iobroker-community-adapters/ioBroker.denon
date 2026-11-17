@@ -34,7 +34,7 @@ Logos oder Marken und werden von diesen nicht unterstützt.
 
 Mehr ist nicht nötig. Welche Datenpunkte angelegt werden, hängt vom Modell ab: Der Adapter legt nur an, was dein Receiver auch kann.
 
-Voraussetzungen: Denon- oder Marantz-AV-Receiver im Netzwerk (LAN oder WLAN), Node.js >= 22, js-controller >= 6.0.11, Admin >= 7.6.20.
+Voraussetzungen: Denon- oder Marantz-AV-Receiver im Netzwerk (LAN oder WLAN), Node.js >= 22.19, js-controller >= 7.2.5, Admin >= 8.3.5.
 
 ## Die wichtigsten Datenpunkte
 
@@ -308,5 +308,5 @@ Mehrzonen-Verstärker wie der DENON POA-3012CI nutzen ein anderes Protokoll. Die
 
 ## Fehlende Funktionen & Fehler
 
-Fehlende Funktionen oder Fehler bitte als [Issue](https://github.com/foxriver76/ioBroker.denon/issues) melden,
+Fehlende Funktionen oder Fehler bitte als [Issue](https://github.com/iobroker-community-adapters/ioBroker.denon/issues) melden,
 mit Debug-Log und Modell des Receivers.

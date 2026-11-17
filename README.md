@@ -9,7 +9,7 @@
 
 [![NPM](https://nodei.co/npm/iobroker.denon.png?downloads=true)](https://nodei.co/npm/iobroker.denon/)
 
-**Tests:** ![Test and Release](https://github.com/foxriver76/ioBroker.denon/workflows/Test%20and%20Release/badge.svg)
+**Tests:** ![Test and Release](https://github.com/iobroker-community-adapters/ioBroker.denon/workflows/Test%20and%20Release/badge.svg)
 
 ## Denon/Marantz AVR adapter for ioBroker
 
@@ -48,7 +48,7 @@ or any associated subsidiaries, logos or trademarks.
 
 That's all. Which states are created depends on the model: the adapter only creates what your receiver supports.
 
-Requirements: Denon or Marantz AV receiver in the network (LAN or WLAN), Node.js >= 22, js-controller >= 6.0.11, admin >= 7.6.20.
+Requirements: Denon or Marantz AV receiver in the network (LAN or WLAN), Node.js >= 22.19, js-controller >= 7.2.5, admin >= 8.3.5.
 
 ## Most important states
 
@@ -322,10 +322,14 @@ for each zone 2 ... 12 (even numbers):
 
 ## Missing functions & bugs
 
-If you are missing any functions or detected a bug, please open an [issue](https://github.com/foxriver76/ioBroker.denon/issues).
+If you are missing any functions or detected a bug, please open an [issue](https://github.com/iobroker-community-adapters/ioBroker.denon/issues).
 Please add a debug log and the model of your receiver.
 
 The adapter is tested with a DENON AVR-X1200W, a DENON AVR-X2200W and a Marantz SR5009.
+
+## Credits
+
+This adapter would not have been possible without the great work of @foxriver76 (https://github.com/foxriver76), who developed former releases of this adapter.
 
 ## Changelog
 <!--
@@ -333,6 +337,8 @@ The adapter is tested with a DENON AVR-X1200W, a DENON AVR-X2200W and a Marantz 
 	### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
+* (mcm1957) Adapter has been migrated to iobroker-community-adapters organisation
+* (mcm1957) Adapter requires js-controller >= 7.2.5, admin >= 8.3.5 and Node.js >= 22.19.0 now
 * (Schimi1983) **Breaking:** new object tree, all states renamed and grouped by function (`main`, `main.audio`, `main.video`, `system`, `remote` ...), old objects are removed on the first start, see [Upgrading from 1.x](#upgrading-from-1x)
 * (Schimi1983) **Breaking:** read values of value lists are the protocol codes of the receiver (e.g. `display.brightness` = `BRI`); writing accepts code or label (fixes #316, #330, #403)
 * (Schimi1983) input list with the names of the receiver menu and only the inputs used there, quick select names of the receiver
@@ -346,7 +352,7 @@ The adapter is tested with a DENON AVR-X1200W, a DENON AVR-X2200W and a Marantz 
 * (Schimi1983) settings are read again when the main zone is switched on; buttons are acknowledged after the command was sent
 * (Schimi1983) all states use roles of the official ioBroker role list
 * (Schimi1983) README with quick start, most important states and FAQ, configuration page in plain language
-* (Schimi1983) admin UI migrated to jsonConfig, dependencies and tooling updated (Node.js >= 22, js-controller >= 6.0.11, admin >= 7.6.20)
+* (Schimi1983) admin UI migrated to jsonConfig, dependencies and tooling updated (Node.js >= 22.19, js-controller >= 7.2.5, admin >= 8.3.5)
 
 ### 1.15.12 (2024-07-23)
 * (foxriver76) updated dependencies
@@ -371,6 +377,7 @@ Older changes can be found in [CHANGELOG_OLD.md](CHANGELOG_OLD.md)
 
 The MIT License (MIT)
 
+Copyright (c) 2026 iobroker-community-adapters <iobroker-community-adapters@gmx.de>  
 Copyright (c) 2018-2026 Moritz Heusinger <moritz.heusinger@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

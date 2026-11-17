@@ -2,7 +2,7 @@
   "name": "iobroker.denon",
   "version": "2.0.0-alpha.11",
   "engines": {
-    "node": ">=22"
+    "node": ">=22.19.0"
   },
   "description": "ioBroker DENON/Marantz Adapter",
   "author": {
@@ -15,10 +15,14 @@
       "email": "moritz.heusinger@gmail.com"
     },
     {
+      "name": "iobroker-community-adapters",
+      "email": "iobroker-community-adapters@gmx.de"
+    },
+    {
       "name": "Szymon Haiduk (Schimi1983)"
     }
   ],
-  "homepage": "https://github.com/foxriver76/ioBroker.denon",
+  "homepage": "https://github.com/iobroker-community-adapters/ioBroker.denon",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -30,7 +34,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/foxriver76/ioBroker.denon.git"
+    "url": "git+https://github.com/iobroker-community-adapters/ioBroker.denon.git"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.4.3"
@@ -66,10 +70,11 @@
     "check": "tsc --noEmit",
     "lint": "eslint -c eslint.config.mjs .",
     "translate": "translate-adapter",
-    "release": "release-script"
+    "release": "release-script",
+    "test:js": "npm run test:ts"
   },
   "bugs": {
-    "url": "https://github.com/foxriver76/ioBroker.denon/issues"
+    "url": "https://github.com/iobroker-community-adapters/ioBroker.denon/issues"
   },
   "files": [
     "admin{,/!(src)/**}/!(tsconfig|tsconfig.*|.eslintrc).{json,json5}",
