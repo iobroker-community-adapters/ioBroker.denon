@@ -69,6 +69,62 @@
         "zh-cn": "设定调制器频率的固定期( 关闭 # 328)"
       }
     },
+    "messages": [
+      {
+        "condition": {
+          "operand": "and",
+          "rules": [
+            "oldVersion<2.0.0-alpha.0",
+            "newVersion>=2.0.0-alpha.0"
+          ]
+        },
+        "title": {
+          "en": "Breaking change: all states are renamed",
+          "de": "Achtung: alle Datenpunkte werden umbenannt",
+          "ru": "Внимание: все состояния переименованы",
+          "pt": "Atenção: todos os estados são renomeados",
+          "nl": "Let op: alle states krijgen een nieuwe naam",
+          "fr": "Attention : tous les états sont renommés",
+          "it": "Attenzione: tutti gli stati vengono rinominati",
+          "es": "Atención: se cambia el nombre de todos los estados",
+          "pl": "Uwaga: wszystkie stany mają nowe nazwy",
+          "uk": "Увага: усі стани перейменовано",
+          "zh-cn": "注意：所有状态均已重命名"
+        },
+        "text": {
+          "en": "Version 2.0 is a complete rework. All states get new names (e.g. zoneMain.powerZone becomes main.power) and the old object tree is deleted on the first start. Scripts, VIS views and aliases must be adjusted afterwards, history settings on the states are lost. Please create a backup first. The README contains a table old → new.",
+          "de": "Version 2.0 ist eine komplette Überarbeitung. Alle Datenpunkte bekommen neue Namen (z. B. wird zoneMain.powerZone zu main.power), der alte Objektbaum wird beim ersten Start gelöscht. Skripte, VIS-Views und Aliase müssen danach angepasst werden, History-Einstellungen an den Datenpunkten gehen verloren. Bitte vorher ein Backup machen. Die README enthält eine Tabelle alt → neu.",
+          "ru": "Версия 2.0 полностью переработана. Все состояния получают новые имена (например, zoneMain.powerZone становится main.power), старое дерево объектов удаляется при первом запуске. Скрипты, представления VIS и алиасы нужно изменить, настройки истории у состояний теряются. Сначала сделайте резервную копию. В README есть таблица старое → новое.",
+          "pt": "A versão 2.0 é uma reformulação completa. Todos os estados recebem novos nomes (por exemplo, zoneMain.powerZone passa a ser main.power) e a árvore de objetos antiga é apagada no primeiro arranque. Scripts, vistas VIS e aliases têm de ser ajustados, as configurações de histórico dos estados perdem-se. Faça primeiro uma cópia de segurança. O README contém uma tabela antigo → novo.",
+          "nl": "Versie 2.0 is volledig herschreven. Alle states krijgen nieuwe namen (bijv. zoneMain.powerZone wordt main.power) en de oude objectboom wordt bij de eerste start verwijderd. Scripts, VIS-views en aliassen moeten daarna worden aangepast, history-instellingen op de states gaan verloren. Maak eerst een back-up. De README bevat een tabel oud → nieuw.",
+          "fr": "La version 2.0 est une refonte complète. Tous les états reçoivent de nouveaux noms (p. ex. zoneMain.powerZone devient main.power) et l'ancienne arborescence d'objets est supprimée au premier démarrage. Les scripts, vues VIS et alias doivent ensuite être adaptés, les paramètres d'historique des états sont perdus. Faites d'abord une sauvegarde. Le README contient un tableau ancien → nouveau.",
+          "it": "La versione 2.0 è una rielaborazione completa. Tutti gli stati ricevono nuovi nomi (ad es. zoneMain.powerZone diventa main.power) e il vecchio albero degli oggetti viene eliminato al primo avvio. Script, viste VIS e alias devono poi essere adattati, le impostazioni della cronologia degli stati vanno perse. Eseguire prima un backup. Il README contiene una tabella vecchio → nuovo.",
+          "es": "La versión 2.0 es una reelaboración completa. Todos los estados reciben nombres nuevos (p. ej. zoneMain.powerZone pasa a ser main.power) y el árbol de objetos antiguo se elimina en el primer inicio. Después hay que adaptar scripts, vistas VIS y alias; se pierden los ajustes de historial de los estados. Haga primero una copia de seguridad. El README contiene una tabla antiguo → nuevo.",
+          "pl": "Wersja 2.0 to całkowita przebudowa. Wszystkie stany otrzymują nowe nazwy (np. zoneMain.powerZone staje się main.power), a stare drzewo obiektów jest usuwane przy pierwszym uruchomieniu. Skrypty, widoki VIS i aliasy trzeba potem dostosować, ustawienia historii stanów zostaną utracone. Najpierw wykonaj kopię zapasową. README zawiera tabelę stare → nowe.",
+          "uk": "Версія 2.0 повністю перероблена. Усі стани отримують нові імена (наприклад, zoneMain.powerZone стає main.power), старе дерево об'єктів видаляється під час першого запуску. Скрипти, подання VIS і псевдоніми потрібно змінити, налаштування історії станів втрачаються. Спочатку зробіть резервну копію. У README є таблиця старе → нове.",
+          "zh-cn": "2.0 版本经过全面重写。所有状态都会改名（例如 zoneMain.powerZone 变为 main.power），旧的对象树会在首次启动时删除。之后需要调整脚本、VIS 视图和别名，状态上的历史记录设置会丢失。请先做好备份。README 中有新旧名称对照表。"
+        },
+        "link": "https://github.com/iobroker-community-adapters/ioBroker.denon/blob/master/docs/de/README.md#update-von-1x",
+        "linkText": {
+          "en": "Table old → new",
+          "de": "Tabelle alt → neu",
+          "ru": "Таблица старое → новое",
+          "pt": "Tabela antigo → novo",
+          "nl": "Tabel oud → nieuw",
+          "fr": "Tableau ancien → nouveau",
+          "it": "Tabella vecchio → nuovo",
+          "es": "Tabla antiguo → nuevo",
+          "pl": "Tabela stare → nowe",
+          "uk": "Таблиця старе → нове",
+          "zh-cn": "新旧名称对照表"
+        },
+        "level": "warn",
+        "buttons": [
+          "agree",
+          "cancel"
+        ]
+      }
+    ],
     "titleLang": {
       "en": "Denon/Marantz AVR",
       "de": "Denon/Marantz AVR",
