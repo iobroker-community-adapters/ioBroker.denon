@@ -11,6 +11,9 @@
 
 **Tests:** ![Test and Release](https://github.com/iobroker-community-adapters/ioBroker.denon/workflows/Test%20and%20Release/badge.svg)
 
+> [!IMPORTANT]
+> This adapter cannot be installed from github
+
 ## Denon/Marantz AVR adapter for ioBroker
 
 Control your Denon or Marantz AV receiver from ioBroker: power, volume, input, surround mode, zone 2/3, tuner and many
