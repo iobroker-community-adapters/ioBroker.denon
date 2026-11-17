@@ -1,0 +1,17 @@
+{
+    "Connection": "Verbindung",
+    "Enter the address of your receiver. Everything else works without further settings.": "Gib die Adresse deines Receivers ein. Alles andere funktioniert ohne weitere Einstellungen.",
+    "IP address of the receiver": "IP-Adresse des Receivers",
+    "e.g. 192.168.1.50. Receivers found in your network are suggested (only while the instance is running).": "z. B. 192.168.1.50. Im Netzwerk gefundene Receiver werden vorgeschlagen (nur bei laufender Instanz).",
+    "Before you start: in the receiver menu set Network → Network Control to “Always On”. The receiver accepts only one control connection at a time, so close other apps that control it (e.g. Home Assistant).": "Vorher: Im Menü des Receivers unter Netzwerk → Netzwerk-Strg. „Immer ein“ einstellen. Der Receiver erlaubt nur eine Steuerverbindung gleichzeitig, also andere Apps schließen, die ihn steuern (z. B. Home Assistant).",
+    "Advanced settings": "Erweiterte Einstellungen",
+    "Normally there is no need to change these settings.": "Diese Einstellungen müssen normalerweise nicht geändert werden.",
+    "Update interval (ms)": "Aktualisierungsintervall (ms)",
+    "How often values the receiver does not report by itself are read, e.g. the sleep timer. 7000 = every 7 seconds": "Wie oft Werte gelesen werden, die der Receiver nicht selbst meldet, z. B. der Sleep-Timer. 7000 = alle 7 Sekunden",
+    "Pause between commands (ms)": "Pause zwischen Befehlen (ms)",
+    "Only increase it if the receiver misses commands. Minimum 50": "Nur erhöhen, wenn der Receiver Befehle verpasst. Mindestens 50",
+    "Port": "Port",
+    "Always 23. Only change it for a serial-to-network converter": "Immer 23. Nur für einen Seriell-Netzwerk-Wandler ändern",
+    "Detect brand, model and zones automatically": "Marke, Modell und Zonen automatisch erkennen",
+    "Recommended. Reads this information from the receiver at startup": "Empfohlen. Liest diese Angaben beim Start aus dem Receiver"
+}

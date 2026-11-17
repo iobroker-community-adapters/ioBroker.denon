@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "denon",
-    "version": "1.15.12",
+    "version": "2.0.0-alpha.11",
     "news": {
+      "2.0.0-alpha.11": {
+        "en": "new object tree (all states renamed, see README), input and quick select names from the receiver, many new settings, new telnet connection with reconnect, admin with jsonConfig",
+        "de": "neuer Objektbaum (alle Datenpunkte umbenannt, siehe README), Eingangs- und Quick-Select-Namen aus dem Receiver, viele neue Einstellungen, neue Telnet-Verbindung mit Wiederverbindung, Admin mit jsonConfig",
+        "ru": "новое дерево объектов (все состояния переименованы, см. README), имена входов и Quick Select из ресивера, много новых настроек, новое telnet-соединение с переподключением, admin на jsonConfig",
+        "pt": "nova árvore de objetos (todos os estados renomeados, ver README), nomes de entradas e Quick Select do receiver, muitas novas configurações, nova ligação telnet com reconexão, admin com jsonConfig",
+        "nl": "nieuwe objectboom (alle states hernoemd, zie README), namen van ingangen en Quick Select uit de receiver, veel nieuwe instellingen, nieuwe telnetverbinding met herverbinden, admin met jsonConfig",
+        "fr": "nouvelle arborescence (tous les états renommés, voir README), noms des entrées et Quick Select issus de l’ampli, nombreux nouveaux réglages, nouvelle connexion telnet avec reconnexion, admin en jsonConfig",
+        "it": "nuovo albero degli oggetti (tutti gli stati rinominati, vedi README), nomi di ingressi e Quick Select dal ricevitore, molte nuove impostazioni, nuova connessione telnet con riconnessione, admin con jsonConfig",
+        "es": "nuevo árbol de objetos (todos los estados renombrados, ver README), nombres de entradas y Quick Select del receptor, muchos ajustes nuevos, nueva conexión telnet con reconexión, admin con jsonConfig",
+        "pl": "nowe drzewo obiektów (wszystkie stany przemianowane, zob. README), nazwy wejść i Quick Select z amplitunera, wiele nowych ustawień, nowe połączenie telnet z ponownym łączeniem, admin z jsonConfig",
+        "uk": "нове дерево об’єктів (усі стани перейменовано, див. README), назви входів і Quick Select з ресивера, багато нових налаштувань, нове telnet-з’єднання з повторним підключенням, admin на jsonConfig",
+        "zh-cn": "新的对象树（所有状态重新命名，见 README），输入和快速选择名称来自功放，大量新设置，带重连的新 telnet 连接，管理界面改用 jsonConfig"
+      },
       "1.15.12": {
         "en": "updated dependencies\nadded tier and license information\nfixed invalid object `denon.0`",
         "de": "aktualisierte abhängigkeiten\nzusätzliche tier- und lizenzinformationen\nungültiges objekt `denon.0`",
@@ -44,8 +57,17 @@
       }
     },
     "titleLang": {
-      "en": "DENON AVR",
-      "de": "DENON AVR"
+      "en": "Denon/Marantz AVR",
+      "de": "Denon/Marantz AVR",
+      "ru": "Denon/Marantz AVR",
+      "pt": "Denon/Marantz AVR",
+      "nl": "Denon/Marantz AVR",
+      "fr": "Denon/Marantz AVR",
+      "it": "Denon/Marantz AVR",
+      "es": "Denon/Marantz AVR",
+      "pl": "Denon/Marantz AVR",
+      "uk": "Denon/Marantz AVR",
+      "zh-cn": "Denon/Marantz AVR"
     },
     "desc": {
       "en": "Control your DENON or Marantz AV Receiver",
@@ -57,7 +79,8 @@
       "it": "Controlla il tuo ricevitore audio DENON o Marantz",
       "es": "Controle su receptor AV DENON o Marantz",
       "pl": "Kontroluj swój odbiornik DENON lub Marantz AV",
-      "zh-cn": "控制你的天龙马兰士或AV接收器"
+      "zh-cn": "控制你的天龙马兰士或AV接收器",
+      "uk": "Керуйте своїм AV-ресивером DENON або Marantz"
     },
     "authors": [
       "Moritz Heusinger <moritz.heusinger@gmail.com>",
@@ -96,35 +119,29 @@
         "js-controller": ">=7.2.5"
       }
     ],
+    "adminUI": {
+      "config": "json"
+    },
     "globalDependencies": [
       {
         "admin": ">=8.3.5"
       }
-    ],
-    "adminUI": {
-      "config": "materialize"
-    }
+    ]
   },
   "native": {
     "ip": "",
+    "telnetPort": 23,
     "pollInterval": 7000,
-    "requestInterval": 100
+    "requestInterval": 100,
+    "useHttpInfo": true
   },
   "objects": [],
   "instanceObjects": [
     {
-      "_id": "",
-      "type": "device",
-      "common": {
-        "name": "DENON device"
-      },
-      "native": {}
-    },
-    {
       "_id": "info",
       "type": "channel",
       "common": {
-        "name": "Information"
+        "name": "Device and current signal"
       },
       "native": {}
     },
@@ -142,57 +159,19 @@
       "native": {}
     },
     {
-      "_id": "display",
+      "_id": "expert",
       "type": "channel",
       "common": {
-        "name": "Display Information"
+        "name": "Expert: raw protocol commands"
       },
       "native": {}
     },
     {
-      "_id": "display.brightness",
+      "_id": "expert.command",
       "type": "state",
       "common": {
-        "name": "Display brightness",
-        "role": "state",
-        "type": "string",
-        "write": true,
-        "read": true,
-        "states": {
-          "0": "Off",
-          "1": "Dark",
-          "2": "Dimmed",
-          "3": "Bright"
-        }
-      },
-      "native": {}
-    },
-    {
-      "_id": "settings",
-      "type": "channel",
-      "common": {
-        "name": "Settings and device commands"
-      },
-      "native": {}
-    },
-    {
-      "_id": "settings.powerSystem",
-      "type": "state",
-      "common": {
-        "name": "System Power State",
-        "role": "switch.power",
-        "type": "boolean",
-        "write": true,
-        "read": true
-      },
-      "native": {}
-    },
-    {
-      "_id": "settings.expertCommand",
-      "type": "state",
-      "common": {
-        "name": "Expert Command",
-        "role": "state",
+        "name": "Send raw command",
+        "role": "text",
         "type": "string",
         "write": true,
         "read": true
@@ -200,25 +179,25 @@
       "native": {}
     },
     {
-      "_id": "settings.expertReadingResult",
+      "_id": "expert.readingPattern",
       "type": "state",
       "common": {
-        "name": "Expert Reading Result",
-        "role": "state",
+        "name": "Pattern (RegExp) for answers to show",
+        "role": "text",
+        "type": "string",
+        "write": true,
+        "read": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "expert.readingResult",
+      "type": "state",
+      "common": {
+        "name": "Last answer matching the pattern",
+        "role": "text",
         "type": "string",
         "write": false,
-        "read": true
-      },
-      "native": {}
-    },
-    {
-      "_id": "settings.expertReadingPattern",
-      "type": "state",
-      "common": {
-        "name": "Expert Reading Pattern",
-        "role": "regex",
-        "type": "string",
-        "write": true,
         "read": true
       },
       "native": {}

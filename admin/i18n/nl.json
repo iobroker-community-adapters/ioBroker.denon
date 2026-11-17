@@ -1,0 +1,17 @@
+{
+    "Connection": "Verbinding",
+    "Enter the address of your receiver. Everything else works without further settings.": "Voer het adres van je receiver in. Al het andere werkt zonder verdere instellingen.",
+    "IP address of the receiver": "IP-adres van de receiver",
+    "e.g. 192.168.1.50. Receivers found in your network are suggested (only while the instance is running).": "bijv. 192.168.1.50. In het netwerk gevonden receivers worden voorgesteld (alleen als de instantie draait).",
+    "Before you start: in the receiver menu set Network → Network Control to “Always On”. The receiver accepts only one control connection at a time, so close other apps that control it (e.g. Home Assistant).": "Vooraf: zet in het menu van de receiver Netwerk → Netwerkbesturing op “Altijd aan”. De receiver accepteert maar één besturingsverbinding tegelijk, sluit dus andere apps die hem besturen (bijv. Home Assistant).",
+    "Advanced settings": "Geavanceerde instellingen",
+    "Normally there is no need to change these settings.": "Deze instellingen hoeven normaal niet te worden gewijzigd.",
+    "Update interval (ms)": "Update-interval (ms)",
+    "How often values the receiver does not report by itself are read, e.g. the sleep timer. 7000 = every 7 seconds": "Hoe vaak waarden worden gelezen die de receiver niet zelf meldt, bijv. de slaaptimer. 7000 = elke 7 seconden",
+    "Pause between commands (ms)": "Pauze tussen opdrachten (ms)",
+    "Only increase it if the receiver misses commands. Minimum 50": "Alleen verhogen als de receiver opdrachten mist. Minimaal 50",
+    "Port": "Poort",
+    "Always 23. Only change it for a serial-to-network converter": "Altijd 23. Alleen wijzigen voor een serieel-naar-netwerkomvormer",
+    "Detect brand, model and zones automatically": "Merk, model en zones automatisch herkennen",
+    "Recommended. Reads this information from the receiver at startup": "Aanbevolen. Leest deze gegevens bij het starten uit de receiver"
+}
