@@ -14,6 +14,8 @@
 
         "noEmitOnError": true,
         "outDir": "./build/",
+        // @KI_HINWEIS: TypeScript 6 requires an explicit rootDir (TS5011), the build config narrows it to ./src
+        "rootDir": "./",
         "removeComments": false,
 
         // This is necessary for the automatic typing of the adapter config
