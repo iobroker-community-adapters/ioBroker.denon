@@ -233,6 +233,7 @@ The video code consists of `0`, the digit of the input and the digit of the outp
 | `lfe` | LFE level (effects channel) 0 ... -10 dB |
 | `dialogLevelAdjust`, `dialogLevel`, `dialogControl` | dialog level on/off and in dB, dialog enhancement 0 ... 6 (DTS:X) |
 | `dialogEnhancer` | dialog enhancer `OFF`, `LOW`, `MED`, `HIGH` (newer models) |
+| `frontSpeaker` | front speakers `SPA` (A), `SPB` (B), `A+B`; only if "Front B" is assigned in the receiver's amp assign setup |
 | `cinemaEq`, `neuralX`, `graphicEq`, `headphoneEq`, `loudness` | Cinema EQ, DTS Neural:X, graphic EQ, headphone EQ, loudness management |
 | `audioDelay` | audio delay (lip sync) 0 ... 300 ms |
 | `audioRestorer` | audio restorer for compressed music |
@@ -340,6 +341,7 @@ This adapter would not have been possible without the great work of @foxriver76 
 ### **WORK IN PROGRESS**
 * (Schimi1983) `/build` is no longer stored in the repository, it is built during test and release (#445)
 * (Schimi1983) new state `main.audio.dialogEnhancer` (#368)
+* (Schimi1983) new state `main.audio.frontSpeaker` to switch speakers A/B (#327)
 * (Schimi1983) network search uses adapter timers, fixes for repository checker (#441)
 
 ### 2.0.0-alpha.12 (2026-11-17)

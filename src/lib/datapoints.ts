@@ -541,6 +541,12 @@ export const DATAPOINTS: readonly Datapoint[] = [
         MED: 'Medium',
         HIGH: 'High',
     }),
+    // @KI_HINWEIS: Speaker A/B (issue #327), protocol "PSFRONT SPA/SPB/A+B". Only answered when "Front B" is assigned in the amp assign setup.
+    enumeration('main.audio.frontSpeaker', 'PSFRONT ', 'Front speakers A/B', {
+        SPA: 'Speaker A',
+        SPB: 'Speaker B',
+        'A+B': 'Speaker A + B',
+    }),
     int('main.audio.dialogControl', 'PSDIC ', 'Dialog control', { min: 0, max: 6 }, { pattern: /^\d{2}$/ }),
     onoff('main.audio.cinemaEq', 'PSCINEMA EQ.', 'Cinema EQ'),
     onoff('main.audio.neuralX', 'PSNEURAL ', 'DTS Neural:X'),
@@ -979,6 +985,7 @@ export const SETTING_QUERIES: readonly string[] = [
     'PSDIL ?',
     'PSDIC ?',
     'PSDEH ?',
+    'PSFRONT ?',
     'PSCINEMA EQ. ?',
     'PSNEURAL ?',
     'PSGEQ ?',
@@ -1005,4 +1012,4 @@ export const NAME_QUERIES: readonly string[] = ['SSFUN ?', 'SSSOD ?', 'SSQSNZMA 
 
 /** Lines which are known but have no state */
 export const IGNORED_LINES =
-    /^(CVEND|OPV|SY|TR|SV|NSET|SSVCT|SSSPC|SSLEV|SSLAN|SSHOS|SSTPN|PSEFF|PSRSZ|PSDEL |PSFRONT|SSINFINS)/;
+    /^(CVEND|OPV|SY|TR|SV|NSET|SSVCT|SSSPC|SSLEV|SSLAN|SSHOS|SSTPN|PSEFF|PSRSZ|PSDEL |SSINFINS)/;
