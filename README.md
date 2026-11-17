@@ -338,7 +338,7 @@ This adapter would not have been possible without the great work of @foxriver76 
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.0.0 (2026-11-17)
 * (Schimi1983) **Breaking change:** complete rework of the adapter. All states have new names (e.g. `zoneMain.powerZone` → `main.power`), the old object tree is deleted on the first start. Scripts, VIS and aliases must be adjusted, see "Upgrade from 1.x" in the README
 * (Schimi1983) stable connection with automatic reconnect, new configuration page, input names from the receiver, states only for functions the receiver supports
 * (Schimi1983) requires Node.js 22.19 or newer, js-controller 7.2.5 or newer and admin 8.3.5 or newer
@@ -376,9 +376,6 @@ This adapter would not have been possible without the great work of @foxriver76 
 
 ### 1.15.5 (2024-01-06)
 * (foxriver76) fixed issue on setting tuner frequency (closes #328)
-
-### 1.15.4 (2023-08-19)
-* (foxriver76) fixed detection of display content if content does not contain `NULL` (closes #323)
 
 Older changes can be found in [CHANGELOG_OLD.md](CHANGELOG_OLD.md)
 

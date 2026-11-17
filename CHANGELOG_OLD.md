@@ -1,4 +1,13 @@
 # Older changes
+### 1.15.4 (2023-08-19)
+* (foxriver76) fixed detection of display content if content does not contain `NULL` (closes #323)
+
+### 1.15.3 (2023-07-13)
+* (foxriver76) fixed log entry when setting channel volume states (closes #321)
+
+### 1.15.2 (2023-06-12)
+* (foxriver76) fixed crash case with controller v5
+
 ### 1.15.1 (2023-06-09)
 * (foxriver76) fix `displayContent` showing old information (closes #318)
 
@@ -285,9 +294,3 @@
 
 ### 0.0.1
 * (foxriver76) initial release
-## 1.15.3 (2023-07-13)
-* (foxriver76) fixed log entry when setting channel volume states (closes #321)
-
-
-## 1.15.2 (2023-06-12)
-* (foxriver76) fixed crash case with controller v5
