@@ -336,7 +336,7 @@ This adapter would not have been possible without the great work of @foxriver76 
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.0.0-alpha.12 (2026-11-17)
 * (mcm1957) Adapter has been migrated to iobroker-community-adapters organisation
 * (mcm1957) Adapter requires js-controller >= 7.2.5, admin >= 8.3.5 and Node.js >= 22.19.0 now
 * (Schimi1983) **Breaking:** new object tree, all states renamed and grouped by function (`main`, `main.audio`, `main.video`, `system`, `remote` ...), old objects are removed on the first start, see [Upgrading from 1.x](#upgrading-from-1x)
@@ -367,9 +367,6 @@ This adapter would not have been possible without the great work of @foxriver76 
 
 ### 1.15.3 (2023-07-13)
 * (foxriver76) fixed log entry when setting channel volume states (closes #321)
-
-### 1.15.2 (2023-06-12)
-* (foxriver76) fixed crash case with controller v5
 
 Older changes can be found in [CHANGELOG_OLD.md](CHANGELOG_OLD.md)
 

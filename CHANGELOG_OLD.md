@@ -285,3 +285,5 @@
 
 ### 0.0.1
 * (foxriver76) initial release
+## 1.15.2 (2023-06-12)
+* (foxriver76) fixed crash case with controller v5
