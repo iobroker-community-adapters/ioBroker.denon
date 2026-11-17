@@ -338,7 +338,7 @@ This adapter would not have been possible without the great work of @foxriver76 
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.0.0-alpha.13 (2026-11-17)
 * (Schimi1983) `/build` is no longer stored in the repository, it is built during test and release (#445)
 * (Schimi1983) TypeScript 6 (explicit `rootDir`)
 * (Schimi1983) new state `main.audio.dialogEnhancer` (#368)
@@ -373,9 +373,6 @@ This adapter would not have been possible without the great work of @foxriver76 
 
 ### 1.15.4 (2023-08-19)
 * (foxriver76) fixed detection of display content if content does not contain `NULL` (closes #323)
-
-### 1.15.3 (2023-07-13)
-* (foxriver76) fixed log entry when setting channel volume states (closes #321)
 
 Older changes can be found in [CHANGELOG_OLD.md](CHANGELOG_OLD.md)
 

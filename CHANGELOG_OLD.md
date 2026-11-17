@@ -285,5 +285,9 @@
 
 ### 0.0.1
 * (foxriver76) initial release
+## 1.15.3 (2023-07-13)
+* (foxriver76) fixed log entry when setting channel volume states (closes #321)
+
+
 ## 1.15.2 (2023-06-12)
 * (foxriver76) fixed crash case with controller v5
