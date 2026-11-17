@@ -232,6 +232,7 @@ The video code consists of `0`, the digit of the input and the digit of the outp
 | `subwooferLevelAdjust`, `subwooferLevel`, `subwoofer2Level` (+ `Up`/`Down`) | subwoofer level on/off and in dB |
 | `lfe` | LFE level (effects channel) 0 ... -10 dB |
 | `dialogLevelAdjust`, `dialogLevel`, `dialogControl` | dialog level on/off and in dB, dialog enhancement 0 ... 6 (DTS:X) |
+| `dialogEnhancer` | dialog enhancer `OFF`, `LOW`, `MED`, `HIGH` (newer models) |
 | `cinemaEq`, `neuralX`, `graphicEq`, `headphoneEq`, `loudness` | Cinema EQ, DTS Neural:X, graphic EQ, headphone EQ, loudness management |
 | `audioDelay` | audio delay (lip sync) 0 ... 300 ms |
 | `audioRestorer` | audio restorer for compressed music |
@@ -336,6 +337,10 @@ This adapter would not have been possible without the great work of @foxriver76 
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (Schimi1983) new state `main.audio.dialogEnhancer` (#368)
+* (Schimi1983) network search uses adapter timers, fixes for repository checker (#441)
+
 ### 2.0.0-alpha.12 (2026-11-17)
 * (mcm1957) Adapter has been migrated to iobroker-community-adapters organisation
 * (mcm1957) Adapter requires js-controller >= 7.2.5, admin >= 8.3.5 and Node.js >= 22.19.0 now
