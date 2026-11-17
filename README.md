@@ -339,6 +339,7 @@ This adapter would not have been possible without the great work of @foxriver76 
 -->
 ### **WORK IN PROGRESS**
 * (Schimi1983) `/build` is no longer stored in the repository, it is built during test and release (#445)
+* (Schimi1983) TypeScript 6 (explicit `rootDir`)
 * (Schimi1983) new state `main.audio.dialogEnhancer` (#368)
 * (Schimi1983) network search uses adapter timers, fixes for repository checker (#441)
 
