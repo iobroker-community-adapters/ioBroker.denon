@@ -915,8 +915,10 @@ class Denon extends utils.Adapter {
         if (JSON.stringify(old) === JSON.stringify(next)) {
             return;
         }
-        (obj.common as ioBroker.StateCommon).states = next;
-        await this.setObject(id, obj);
+        // @KI_HINWEIS: extendObject merges deep, so removed keys would stay in the list. Clearing with null
+        // first and setting the new list afterwards replaces it without setObject() (repochecker S5054, #451).
+        await this.extendObject(id, { common: { states: null as unknown as Record<string, string> } });
+        await this.extendObject(id, { common: { states: next } });
         for (const key of Object.keys(next)) {
             this.knownStateValues.add(`${id}|${key}`);
         }
@@ -992,8 +994,8 @@ class Denon extends utils.Adapter {
             if (obj?.common && 'states' in obj.common && helper.isObject(obj.common.states)) {
                 const map = obj.common.states as Record<string, string>;
                 if (!Object.prototype.hasOwnProperty.call(map, val)) {
-                    map[val] = val;
-                    await this.setObject(id, obj);
+                    // extendObject merges the new key into the existing value list
+                    await this.extendObject(id, { common: { states: { [val]: val } } });
                     this.log.info(`[INFO] Added ${val} to ${id}`);
                 }
                 this.knownStateValues.add(cacheKey);

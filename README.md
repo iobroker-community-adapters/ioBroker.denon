@@ -341,6 +341,9 @@ This adapter would not have been possible without the great work of @foxriver76 
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (Schimi1983) value lists are updated with extendObject instead of setObject, old workflow file removed (#451)
+
 ### 2.0.0 (2026-11-17)
 * (Schimi1983) **Breaking change:** complete rework of the adapter. All states have new names (e.g. `zoneMain.powerZone` → `main.power`), the old object tree is deleted on the first start. Scripts, VIS and aliases must be adjusted, see "Upgrade from 1.x" in the README
 * (Schimi1983) stable connection with automatic reconnect, new configuration page, input names from the receiver, states only for functions the receiver supports
