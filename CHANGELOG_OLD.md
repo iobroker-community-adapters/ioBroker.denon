@@ -1,4 +1,7 @@
 # Older changes
+### 1.15.5 (2024-01-06)
+* (foxriver76) fixed issue on setting tuner frequency (closes #328)
+
 ### 1.15.4 (2023-08-19)
 * (foxriver76) fixed detection of display content if content does not contain `NULL` (closes #323)
 

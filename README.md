@@ -341,7 +341,7 @@ This adapter would not have been possible without the great work of @foxriver76 
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.0.1 (2026-11-19)
 * (Schimi1983) value lists are updated with extendObject instead of setObject, old workflow file removed (#451)
 * (Schimi1983) Marantz Cinema: option lines (`OPINF…`) are no longer logged as unhandled
 * (Schimi1983) audio signal code 12 is shown as "No signal" (Marantz Cinema sends it in standby)
@@ -381,9 +381,6 @@ This adapter would not have been possible without the great work of @foxriver76 
 * (foxriver76) updated dependencies
 * (foxriver76) added tier and license information
 * (foxriver76) fixed invalid object `denon.0`
-
-### 1.15.5 (2024-01-06)
-* (foxriver76) fixed issue on setting tuner frequency (closes #328)
 
 Older changes can be found in [CHANGELOG_OLD.md](CHANGELOG_OLD.md)
 
