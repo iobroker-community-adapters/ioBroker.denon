@@ -190,7 +190,7 @@ Signal codes measured on an AVR-X2200W. The codes depend on the model generation
 | `06` | DTS | | `9` | 2160p 24/25 Hz |
 | `08` | DTS-HD High Resolution | | `A` | 2160p 50/60 Hz |
 | `09` | DTS-HD Master Audio | | | |
-| `12` | switching, no signal yet | | | |
+| `12` | no signal (while switching, Marantz Cinema also in standby) | | | |
 
 The video code consists of `0`, the digit of the input and the digit of the output, e.g. `088` = 1080p 24 Hz in and out.
 
@@ -343,6 +343,8 @@ This adapter would not have been possible without the great work of @foxriver76 
 -->
 ### **WORK IN PROGRESS**
 * (Schimi1983) value lists are updated with extendObject instead of setObject, old workflow file removed (#451)
+* (Schimi1983) Marantz Cinema: option lines (`OPINF…`) are no longer logged as unhandled
+* (Schimi1983) audio signal code 12 is shown as "No signal" (Marantz Cinema sends it in standby)
 
 ### 2.0.0 (2026-11-17)
 * (Schimi1983) **Breaking change:** complete rework of the adapter. All states have new names (e.g. `zoneMain.powerZone` → `main.power`), the old object tree is deleted on the first start. Scripts, VIS and aliases must be adjusted, see "Upgrade from 1.x" in the README

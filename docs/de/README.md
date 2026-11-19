@@ -173,7 +173,7 @@ Gemessene Signal-Codes eines AVR-X2200W. Die Codes hängen von der Modellgenerat
 | `06` | DTS | | `9` | 2160p 24/25 Hz |
 | `08` | DTS-HD High Resolution | | `A` | 2160p 50/60 Hz |
 | `09` | DTS-HD Master Audio | | | |
-| `12` | Umschaltung, noch kein Signal | | | |
+| `12` | kein Signal (beim Umschalten, bei Marantz Cinema auch im Standby) | | | |
 
 Der Video-Code besteht aus `0`, der Ziffer für den Eingang und der Ziffer für den Ausgang, z. B. `088` = 1080p 24 Hz ein und aus.
 

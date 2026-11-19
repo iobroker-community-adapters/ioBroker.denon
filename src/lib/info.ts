@@ -18,7 +18,8 @@ export const AUDIO_SIGNAL_TEXT: Readonly<Record<string, string>> = {
     '06': 'DTS',
     '08': 'DTS-HD High Resolution',
     '09': 'DTS-HD Master Audio',
-    12: 'Switching',
+    // @KI_HINWEIS: 12 = no valid signal: AVR-X2200W while switching, Marantz Cinema 60 permanently in standby (forum test)
+    12: 'No signal',
 };
 
 /**
