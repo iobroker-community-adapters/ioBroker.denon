@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "denon",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "news": {
+      "2.0.2": {
+        "en": "new settings (Marantz Cinema and newer Denon models): M-DAX, IMAX Enhanced, DAC filter, illumination, Bass Sync\nshorter README: list of all states and upgrade table now in the docs folder",
+        "de": "neue Einstellungen (Marantz Cinema und neuere Denon-Modelle): M-DAX, IMAX Enhanced, DAC-Filter, Beleuchtung, Bass Sync\nkürzere README: Liste aller Datenpunkte und Update-Tabelle jetzt im Ordner docs",
+        "ru": "новые настройки (Marantz Cinema и новые модели Denon): M-DAX, IMAX Enhanced, фильтр ЦАП, подсветка, Bass Sync\nREADME короче: список всех состояний и таблица обновления теперь в папке docs",
+        "pt": "novas definições (Marantz Cinema e modelos Denon mais recentes): M-DAX, IMAX Enhanced, filtro DAC, iluminação, Bass Sync\nREADME mais curto: lista de todos os estados e tabela de atualização agora na pasta docs",
+        "nl": "nieuwe instellingen (Marantz Cinema en nieuwere Denon-modellen): M-DAX, IMAX Enhanced, DAC-filter, verlichting, Bass Sync\nkortere README: lijst van alle states en upgradetabel nu in de map docs",
+        "fr": "nouveaux réglages (Marantz Cinema et modèles Denon récents) : M-DAX, IMAX Enhanced, filtre DAC, éclairage, Bass Sync\nREADME plus court : liste de tous les états et tableau de mise à jour désormais dans le dossier docs",
+        "it": "nuove impostazioni (Marantz Cinema e modelli Denon più recenti): M-DAX, IMAX Enhanced, filtro DAC, illuminazione, Bass Sync\nREADME più breve: elenco di tutti gli stati e tabella di aggiornamento ora nella cartella docs",
+        "es": "nuevos ajustes (Marantz Cinema y modelos Denon recientes): M-DAX, IMAX Enhanced, filtro DAC, iluminación, Bass Sync\nREADME más corto: la lista de todos los estados y la tabla de actualización están ahora en la carpeta docs",
+        "pl": "nowe ustawienia (Marantz Cinema i nowsze modele Denon): M-DAX, IMAX Enhanced, filtr DAC, podświetlenie, Bass Sync\nkrótszy README: lista wszystkich stanów i tabela aktualizacji są teraz w folderze docs",
+        "uk": "нові налаштування (Marantz Cinema та новіші моделі Denon): M-DAX, IMAX Enhanced, фільтр ЦАП, підсвічування, Bass Sync\nкоротший README: список усіх станів і таблиця оновлення тепер у папці docs",
+        "zh-cn": "新设置（Marantz Cinema 及较新的 Denon 型号）：M-DAX、IMAX Enhanced、DAC 滤波器、照明、Bass Sync\nREADME 更简短：所有状态列表和升级对照表现位于 docs 文件夹"
+      },
       "2.0.1": {
         "en": "Marantz Cinema: audio signal code 12 is shown as \"No signal\" (sent in standby)\nMarantz Cinema: additional option lines no longer appear as \"Unhandled line\" in the debug log\nvalue lists (input names, surround modes) are updated with extendObject (#451)",
         "de": "Marantz Cinema: Audiosignal-Code 12 wird als „Kein Signal“ angezeigt (kommt im Standby)\nMarantz Cinema: zusätzliche Optionszeilen erscheinen nicht mehr als „Unhandled line“ im Debug-Log\nAuswahllisten (Eingangsnamen, Surround-Modi) werden mit extendObject aktualisiert (#451)",
