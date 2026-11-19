@@ -1,5 +1,13 @@
 import { expect } from 'chai';
-import { DATAPOINTS, DATAPOINTS_BY_ID, datapointObject, formatCommand, formatFrequency, matchLine } from './datapoints';
+import {
+    DATAPOINTS,
+    DATAPOINTS_BY_ID,
+    IGNORED_LINES,
+    datapointObject,
+    formatCommand,
+    formatFrequency,
+    matchLine,
+} from './datapoints';
 
 /**
  * Shortcut: state id and value of a line
@@ -221,6 +229,14 @@ describe('datapoints', () => {
                     expect(DATAPOINTS_BY_ID.has(dp.with), `${dp.id} -> ${dp.with}`).to.equal(true);
                 }
             }
+        });
+    });
+
+    describe('IGNORED_LINES', () => {
+        it('ignores option bit masks of Marantz Cinema models', () => {
+            expect(IGNORED_LINES.test('OPINFINS 11111111111111000000')).to.equal(true);
+            expect(IGNORED_LINES.test('OPINFASP 11111100000000000000000000000000')).to.equal(true);
+            expect(IGNORED_LINES.test('PSDEH OFF')).to.equal(false);
         });
     });
 });

@@ -343,6 +343,7 @@ This adapter would not have been possible without the great work of @foxriver76 
 -->
 ### **WORK IN PROGRESS**
 * (Schimi1983) value lists are updated with extendObject instead of setObject, old workflow file removed (#451)
+* (Schimi1983) Marantz Cinema: option lines (`OPINF…`) are no longer logged as unhandled
 
 ### 2.0.0 (2026-11-17)
 * (Schimi1983) **Breaking change:** complete rework of the adapter. All states have new names (e.g. `zoneMain.powerZone` → `main.power`), the old object tree is deleted on the first start. Scripts, VIS and aliases must be adjusted, see "Upgrade from 1.x" in the README

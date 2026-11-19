@@ -1010,6 +1010,11 @@ export const SETTING_QUERIES: readonly string[] = [
 /** Queries of names and lists stored in the AVR (input names, used inputs, quick select names) */
 export const NAME_QUERIES: readonly string[] = ['SSFUN ?', 'SSSOD ?', 'SSQSNZMA ?'];
 
-/** Lines which are known but have no state */
+/**
+ * Lines which are known but have no state.
+ *
+ * @KI_HINWEIS: OPINF (e.g. "OPINFINS 1111…", "OPINFASP 1111…") are bit masks of available options
+ * sent by Marantz Cinema models (seen on Cinema 60); not documented, therefore no state.
+ */
 export const IGNORED_LINES =
-    /^(CVEND|OPV|SY|TR|SV|NSET|SSVCT|SSSPC|SSLEV|SSLAN|SSHOS|SSTPN|PSEFF|PSRSZ|PSDEL |SSINFINS)/;
+    /^(CVEND|OPV|OPINF|SY|TR|SV|NSET|SSVCT|SSSPC|SSLEV|SSLAN|SSHOS|SSTPN|PSEFF|PSRSZ|PSDEL |SSINFINS)/;
