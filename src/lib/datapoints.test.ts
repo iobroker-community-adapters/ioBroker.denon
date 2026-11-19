@@ -85,6 +85,17 @@ describe('datapoints', () => {
             expect(m('PSDEH MED')).to.deep.equal(['main.audio.dialogEnhancer', 'MED']);
             expect(m('PSFRONT A+B')).to.deep.equal(['main.audio.frontSpeaker', 'A+B']);
             expect(m('PSFRONT SPB')).to.deep.equal(['main.audio.frontSpeaker', 'SPB']);
+            // Marantz Cinema protocols
+            expect(m('PSMDAX HI')).to.deep.equal(['main.audio.mdax', 'HI']);
+            expect(m('PSBSC 16')).to.deep.equal(['main.audio.bassSync', 16]);
+            expect(m('PSDACFIL MODE2')).to.deep.equal(['main.audio.dacFilter', 'MODE2']);
+            expect(m('PSIMAX AUTO')).to.deep.equal(['main.audio.imax', 'AUTO']);
+            expect(m('PSIMAXAUD MANUAL')).to.deep.equal(['main.audio.imaxAudio', 'MANUAL']);
+            expect(m('PSIMAXHPF 080')).to.deep.equal(['main.audio.imaxHighPass', '080']);
+            expect(m('PSIMAXLPF 120')).to.deep.equal(['main.audio.imaxLowPass', '120']);
+            expect(m('PSIMAXSWM ON')).to.deep.equal(['main.audio.imaxSubwoofer', true]);
+            expect(m('PSIMAXSWO L+M')).to.deep.equal(['main.audio.imaxSubwooferOutput', 'L+M']);
+            expect(m('ILB DAR')).to.deep.equal(['display.illumination', 'DAR']);
             expect(m('PSNEURAL ON')).to.deep.equal(['main.audio.neuralX', true]);
             expect(m('PSCINEMA EQ.OFF')).to.deep.equal(['main.audio.cinemaEq', false]);
             expect(m('PSGEQ OFF')).to.deep.equal(['main.audio.graphicEq', false]);
@@ -162,6 +173,11 @@ describe('datapoints', () => {
             expect(cmd('main.audio.dialogEnhancer', 'High')).to.deep.equal(['PSDEH HIGH']);
             expect(cmd('main.audio.frontSpeaker', 'SPB')).to.deep.equal(['PSFRONT SPB']);
             expect(cmd('main.audio.frontSpeaker', 'A+B')).to.deep.equal(['PSFRONT A+B']);
+            expect(cmd('main.audio.mdax', 'MED')).to.deep.equal(['PSMDAX MED']);
+            expect(cmd('main.audio.bassSync', 8)).to.deep.equal(['PSBSC 08']);
+            expect(cmd('main.audio.imaxHighPass', '100')).to.deep.equal(['PSIMAXHPF 100']);
+            expect(cmd('main.audio.imaxSubwoofer', false)).to.deep.equal(['PSIMAXSWM OFF']);
+            expect(cmd('display.illumination', 'Auto')).to.deep.equal(['ILB AUTO']);
             expect(cmd('main.audio.cinemaEq', true)).to.deep.equal(['PSCINEMA EQ.ON']);
             expect(cmd('main.audio.multEq', 'Flat')).to.deep.equal(['PSMULTEQ:FLAT']);
             expect(cmd('main.video.hdmiResolution', '1080p 24 Hz')).to.deep.equal(['VSSCH10P24']);

@@ -237,6 +237,12 @@ The video code consists of `0`, the digit of the input and the digit of the outp
 | `dialogLevelAdjust`, `dialogLevel`, `dialogControl` | dialog level on/off and in dB, dialog enhancement 0 ... 6 (DTS:X) |
 | `dialogEnhancer` | dialog enhancer `OFF`, `LOW`, `MED`, `HIGH` (newer models) |
 | `frontSpeaker` | front speakers `SPA` (A), `SPB` (B), `A+B`; only if "Front B" is assigned in the receiver's amp assign setup |
+| `mdax` | M-DAX (improves compressed music, Marantz): `OFF`, `LOW`, `MED`, `HI` |
+| `bassSync` | Bass Sync 0 ... 16 dB |
+| `dacFilter` | DAC filter `MODE1`, `MODE2` (Marantz) |
+| `imax`, `imaxAudio` | IMAX Enhanced: mode `AUTO`, `ON`, `OFF`; audio settings `AUTO`, `MANUAL` |
+| `imaxHighPass`, `imaxLowPass` | IMAX crossover frequencies in Hz (e.g. `080` = 80 Hz) |
+| `imaxSubwoofer`, `imaxSubwooferOutput` | IMAX subwoofer mode on/off; output `L+M` (LFE + main) or `LFE` |
 | `cinemaEq`, `neuralX`, `graphicEq`, `headphoneEq`, `loudness` | Cinema EQ, DTS Neural:X, graphic EQ, headphone EQ, loudness management |
 | `audioDelay` | audio delay (lip sync) 0 ... 300 ms |
 | `audioRestorer` | audio restorer for compressed music |
@@ -272,6 +278,7 @@ receiver are created. Zone 2/3: `frontLeft` and `frontRight`.
 | State | Description |
 |---|---|
 | `brightness` | brightness: `BRI` bright, `DIM` dimmed, `DAR` dark, `OFF` off |
+| `illumination` | front panel illumination (Marantz): `AUTO`, `BRI`, `DIM`, `DAR`, `OFF` |
 | `line0` ... `line8` | content of the network menu or the playback screen, line 0 is the title (not on HEOS models) |
 | `cursorLine` | line 1 ... 7 with the cursor |
 
@@ -341,6 +348,9 @@ This adapter would not have been possible without the great work of @foxriver76 
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (Schimi1983) new settings from the Marantz Cinema protocols: M-DAX, IMAX Enhanced, DAC filter, illumination; Bass Sync
+
 ### 2.0.1 (2026-11-19)
 * (Schimi1983) value lists are updated with extendObject instead of setObject, old workflow file removed (#451)
 * (Schimi1983) Marantz Cinema: option lines (`OPINF…`) are no longer logged as unhandled

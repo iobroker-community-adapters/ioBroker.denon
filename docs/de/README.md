@@ -220,6 +220,12 @@ Der Video-Code besteht aus `0`, der Ziffer für den Eingang und der Ziffer für 
 | `dialogLevelAdjust`, `dialogLevel`, `dialogControl` | Dialogpegel ein/aus und in dB, Dialog-Verstärkung 0 ... 6 (DTS:X) |
 | `dialogEnhancer` | Dialog Enhancer (Sprachverständlichkeit) `OFF`, `LOW`, `MED`, `HIGH` (neuere Modelle) |
 | `frontSpeaker` | Lautsprecher A/B: `SPA` (A), `SPB` (B), `A+B`; nur wenn im Receiver unter Endstufenzuweisung „Front B“ eingestellt ist |
+| `mdax` | M-DAX (verbessert komprimierte Musik, Marantz): `OFF`, `LOW`, `MED`, `HI` |
+| `bassSync` | Bass Sync 0 ... 16 dB |
+| `dacFilter` | DAC-Filter `MODE1`, `MODE2` (Marantz) |
+| `imax`, `imaxAudio` | IMAX Enhanced: Modus `AUTO`, `ON`, `OFF`; Audio-Einstellungen `AUTO`, `MANUAL` |
+| `imaxHighPass`, `imaxLowPass` | IMAX-Trennfrequenzen in Hz (z. B. `080` = 80 Hz) |
+| `imaxSubwoofer`, `imaxSubwooferOutput` | IMAX-Subwoofer-Modus ein/aus; Ausgang `L+M` (LFE + Hauptkanäle) oder `LFE` |
 | `cinemaEq`, `neuralX`, `graphicEq`, `headphoneEq`, `loudness` | Cinema EQ, DTS Neural:X, Grafik-EQ, Kopfhörer-EQ, Loudness Management |
 | `audioDelay` | Audio-Verzögerung (Lippensynchronität) 0 ... 300 ms |
 | `audioRestorer` | Klangverbesserung für komprimierte Musik |
@@ -255,6 +261,7 @@ die im Receiver eingerichtet sind. Zone 2/3: `frontLeft` und `frontRight`.
 | State | Beschreibung |
 |---|---|
 | `brightness` | Helligkeit: `BRI` hell, `DIM` gedimmt, `DAR` dunkel, `OFF` aus |
+| `illumination` | Beleuchtung der Front (Marantz): `AUTO`, `BRI` hell, `DIM` gedimmt, `DAR` dunkel, `OFF` aus |
 | `line0` ... `line8` | Inhalt des Netzwerkmenüs bzw. der Wiedergabeanzeige, Zeile 0 ist der Titel (nicht bei HEOS-Modellen) |
 | `cursorLine` | Zeile 1 ... 7, in der der Cursor steht |
 

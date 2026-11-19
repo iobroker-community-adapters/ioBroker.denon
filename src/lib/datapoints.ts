@@ -446,6 +446,14 @@ export const DATAPOINTS: readonly Datapoint[] = [
         DAR: 'Dark',
         OFF: 'Off',
     }),
+    // Marantz Cinema: illumination of the front panel
+    enumeration('display.illumination', 'ILB ', 'Illumination', {
+        AUTO: 'Auto',
+        BRI: 'Bright',
+        DIM: 'Dimmed',
+        DAR: 'Dark',
+        OFF: 'Off',
+    }),
 
     // remote control
     onoff('remote.menu', 'MNMEN ', 'Setup menu on screen'),
@@ -546,6 +554,42 @@ export const DATAPOINTS: readonly Datapoint[] = [
         SPA: 'Speaker A',
         SPB: 'Speaker B',
         'A+B': 'Speaker A + B',
+    }),
+    // @KI_HINWEIS: The following settings come from the Marantz Cinema protocols (FY23/CY2022 and CY2026) and
+    // partly from the Denon CY2026 protocol. Like all settings they are only created when the AVR answers.
+    enumeration('main.audio.mdax', 'PSMDAX ', 'M-DAX (compressed audio enhancer)', {
+        OFF: 'Off',
+        LOW: 'Low',
+        MED: 'Medium',
+        HI: 'High',
+    }),
+    int('main.audio.bassSync', 'PSBSC ', 'Bass sync', { min: 0, max: 16, unit: 'dB' }, { pattern: /^\d{2}$/ }),
+    enumeration('main.audio.dacFilter', 'PSDACFIL ', 'DAC filter', { MODE1: 'Mode 1', MODE2: 'Mode 2' }),
+    enumeration('main.audio.imax', 'PSIMAX ', 'IMAX mode', { AUTO: 'Auto', ON: 'On', OFF: 'Off' }),
+    enumeration('main.audio.imaxAudio', 'PSIMAXAUD ', 'IMAX audio settings', { AUTO: 'Auto', MANUAL: 'Manual' }),
+    enumeration(
+        'main.audio.imaxHighPass',
+        'PSIMAXHPF ',
+        'IMAX high pass filter',
+        Object.fromEntries(
+            ['040', '060', '070', '080', '090', '100', '110', '120', '150', '180', '200', '250'].map(f => [
+                f,
+                `${Number(f)} Hz`,
+            ]),
+        ),
+    ),
+    enumeration(
+        'main.audio.imaxLowPass',
+        'PSIMAXLPF ',
+        'IMAX low pass filter',
+        Object.fromEntries(
+            ['070', '080', '090', '100', '110', '120', '150', '180', '200', '250'].map(f => [f, `${Number(f)} Hz`]),
+        ),
+    ),
+    onoff('main.audio.imaxSubwoofer', 'PSIMAXSWM ', 'IMAX subwoofer mode'),
+    enumeration('main.audio.imaxSubwooferOutput', 'PSIMAXSWO ', 'IMAX subwoofer output', {
+        'L+M': 'LFE + Main',
+        LFE: 'LFE',
     }),
     int('main.audio.dialogControl', 'PSDIC ', 'Dialog control', { min: 0, max: 6 }, { pattern: /^\d{2}$/ }),
     onoff('main.audio.cinemaEq', 'PSCINEMA EQ.', 'Cinema EQ'),
@@ -961,6 +1005,7 @@ export const SETTING_QUERIES: readonly string[] = [
     'MNZST?',
     'SPPR ?',
     'DIM ?',
+    'ILB ?',
     'MNMEN?',
     'CV?',
     'Z2CV?',
@@ -986,6 +1031,15 @@ export const SETTING_QUERIES: readonly string[] = [
     'PSDIC ?',
     'PSDEH ?',
     'PSFRONT ?',
+    'PSMDAX ?',
+    'PSBSC ?',
+    'PSDACFIL ?',
+    'PSIMAX ?',
+    'PSIMAXAUD ?',
+    'PSIMAXHPF ?',
+    'PSIMAXLPF ?',
+    'PSIMAXSWM ?',
+    'PSIMAXSWO ?',
     'PSCINEMA EQ. ?',
     'PSNEURAL ?',
     'PSGEQ ?',
