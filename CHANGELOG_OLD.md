@@ -1,4 +1,36 @@
 # Older changes
+### 2.0.0-alpha.13 (2026-11-17)
+* (Schimi1983) `/build` is no longer stored in the repository, it is built during test and release (#445)
+* (Schimi1983) TypeScript 6 (explicit `rootDir`)
+* (Schimi1983) new state `main.audio.dialogEnhancer` (#368)
+* (Schimi1983) new state `main.audio.frontSpeaker` to switch speakers A/B (#327)
+* (Schimi1983) network search uses adapter timers, fixes for repository checker (#441)
+
+### 2.0.0-alpha.12 (2026-11-17)
+* (mcm1957) Adapter has been migrated to iobroker-community-adapters organisation
+* (mcm1957) Adapter requires js-controller >= 7.2.5, admin >= 8.3.5 and Node.js >= 22.19.0 now
+* (Schimi1983) **Breaking:** new object tree, all states renamed and grouped by function (`main`, `main.audio`, `main.video`, `system`, `remote` ...), old objects are removed on the first start, see [Upgrading from 1.x](docs/en/upgrade-1x.md)
+* (Schimi1983) **Breaking:** read values of value lists are the protocol codes of the receiver (e.g. `display.brightness` = `BRI`); writing accepts code or label (fixes #316, #330, #403)
+* (Schimi1983) input list with the names of the receiver menu and only the inputs used there, quick select names of the receiver
+* (Schimi1983) new states (only created if the receiver answers): Neural:X, Cinema EQ, graphic/headphone EQ, loudness management, subwoofer on/off, audio delay, All Zone Stereo, auto standby of zones 2/3, HDMI audio of zone 2, HDMI audio output, tuner band/tuning mode/preset, audio signal as text, ECO mode, dynamic compression, audio restorer, input modes, video resolution, signal info, firmware, model/brand/zones, sound mode group buttons (#271)
+* (Schimi1983) channel levels are only created for the speakers set up in the receiver; play buttons, display lines and presets only on models without HEOS
+* (Schimi1983) new telnet transport: line buffer (CR only), prioritized send queue with protocol pacing (>= 50 ms, 1 s after power on), keepalive and reconnect with backoff
+* (Schimi1983) fixed display lines, picture mode (#317), video processing mode, channel volumes SW2-SW4, sleep timer formatting
+* (Schimi1983) connection errors are logged once, a refused connection (telnet in use by another app) is reported as warning only after 30 s (#240)
+* (Schimi1983) brand, model and number of zones are read once via HTTP (`Deviceinfo.xml`); queries for missing zones and for the quick select variant of the other brand are skipped, queries of POA multi zone amplifiers only go to such devices
+* (Schimi1983) zone 2/3: input `SOURCE` (follows main zone) is recognized, volumes are sent in whole steps
+* (Schimi1983) settings are read again when the main zone is switched on; buttons are acknowledged after the command was sent
+* (Schimi1983) all states use roles of the official ioBroker role list
+* (Schimi1983) README with quick start, most important states and FAQ, configuration page in plain language
+* (Schimi1983) admin UI migrated to jsonConfig, dependencies and tooling updated (Node.js >= 22.19, js-controller >= 7.2.5, admin >= 8.3.5)
+
+### 1.15.12 (2024-07-23)
+* (foxriver76) updated dependencies
+* (foxriver76) added tier and license information
+* (foxriver76) fixed invalid object `denon.0`
+
+Older changes can be found in [CHANGELOG_OLD.md](CHANGELOG_OLD.md)
+
 ### 1.15.5 (2024-01-06)
 * (foxriver76) fixed issue on setting tuner frequency (closes #328)
 
