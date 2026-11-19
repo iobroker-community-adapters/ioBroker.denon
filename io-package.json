@@ -104,7 +104,7 @@
           "uk": "Версія 2.0 повністю перероблена. Усі стани отримують нові імена (наприклад, zoneMain.powerZone стає main.power), старе дерево об'єктів видаляється під час першого запуску. Скрипти, подання VIS і псевдоніми потрібно змінити, налаштування історії станів втрачаються. Спочатку зробіть резервну копію. У README є таблиця старе → нове.",
           "zh-cn": "2.0 版本经过全面重写。所有状态都会改名（例如 zoneMain.powerZone 变为 main.power），旧的对象树会在首次启动时删除。之后需要调整脚本、VIS 视图和别名，状态上的历史记录设置会丢失。请先做好备份。README 中有新旧名称对照表。"
         },
-        "link": "https://github.com/iobroker-community-adapters/ioBroker.denon/blob/master/docs/de/README.md#update-von-1x",
+        "link": "https://github.com/iobroker-community-adapters/ioBroker.denon/blob/master/docs/de/upgrade-1x.md",
         "linkText": {
           "en": "Table old → new",
           "de": "Tabelle alt → neu",
