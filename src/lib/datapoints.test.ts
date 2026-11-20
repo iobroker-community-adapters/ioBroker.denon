@@ -96,6 +96,9 @@ describe('datapoints', () => {
             expect(m('PSIMAXSWM ON')).to.deep.equal(['main.audio.imaxSubwoofer', true]);
             expect(m('PSIMAXSWO L+M')).to.deep.equal(['main.audio.imaxSubwooferOutput', 'L+M']);
             expect(m('ILB DAR')).to.deep.equal(['display.illumination', 'DAR']);
+            expect(m('OPALSSET ON')).to.deep.equal(['main.audio.autoLipSync', true]);
+            expect(m('TPANOFF')).to.deep.equal(['tuner.preset', 0]);
+            expect(m('TPAN05')).to.deep.equal(['tuner.preset', 5]);
             expect(m('PSNEURAL ON')).to.deep.equal(['main.audio.neuralX', true]);
             expect(m('PSCINEMA EQ.OFF')).to.deep.equal(['main.audio.cinemaEq', false]);
             expect(m('PSGEQ OFF')).to.deep.equal(['main.audio.graphicEq', false]);
@@ -178,6 +181,7 @@ describe('datapoints', () => {
             expect(cmd('main.audio.imaxHighPass', '100')).to.deep.equal(['PSIMAXHPF 100']);
             expect(cmd('main.audio.imaxSubwoofer', false)).to.deep.equal(['PSIMAXSWM OFF']);
             expect(cmd('display.illumination', 'Auto')).to.deep.equal(['ILB AUTO']);
+            expect(cmd('main.audio.autoLipSync', true)).to.deep.equal(['OPALSSET ON']);
             expect(cmd('main.audio.cinemaEq', true)).to.deep.equal(['PSCINEMA EQ.ON']);
             expect(cmd('main.audio.multEq', 'Flat')).to.deep.equal(['PSMULTEQ:FLAT']);
             expect(cmd('main.video.hdmiResolution', '1080p 24 Hz')).to.deep.equal(['VSSCH10P24']);
@@ -252,6 +256,9 @@ describe('datapoints', () => {
         it('ignores option bit masks of Marantz Cinema models', () => {
             expect(IGNORED_LINES.test('OPINFINS 11111111111111000000')).to.equal(true);
             expect(IGNORED_LINES.test('OPINFASP 11111100000000000000000000000000')).to.equal(true);
+            expect(IGNORED_LINES.test('OPALSDSP OFF')).to.equal(true);
+            expect(IGNORED_LINES.test('OPALSVAL 000')).to.equal(true);
+            expect(IGNORED_LINES.test('OPALSSET ON')).to.equal(false);
             expect(IGNORED_LINES.test('PSDEH OFF')).to.equal(false);
         });
     });

@@ -82,6 +82,7 @@ Tipp: Im Router dem Receiver eine feste IP-Adresse geben, damit sich die Adresse
 
 **Display, Cover oder Wiedergabetasten fehlen**
 * Modelle mit HEOS (ab etwa 2016) geben diese Infos nicht über die Steuerverbindung heraus.
+* Für Wiedergabe-Steuerung, Titelanzeige und Cover bei diesen Modellen zusätzlich den [HEOS-Adapter](https://github.com/withstu/ioBroker.heos) nutzen. Beide Adapter können gleichzeitig laufen.
 
 ## Update von 1.x
 
