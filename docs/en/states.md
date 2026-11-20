@@ -80,6 +80,7 @@ The video code consists of `0`, the digit of the input and the digit of the outp
 | `frontSpeaker` | front speakers `SPA` (A), `SPB` (B), `A+B`; only if "Front B" is assigned in the receiver's amp assign setup |
 | `mdax` | M-DAX (improves compressed music, Marantz): `OFF`, `LOW`, `MED`, `HI` |
 | `bassSync` | Bass Sync 0 ... 16 dB |
+| `autoLipSync` | auto lip sync on/off (Marantz Cinema) |
 | `dacFilter` | DAC filter `MODE1`, `MODE2` (Marantz) |
 | `imax`, `imaxAudio` | IMAX Enhanced: mode `AUTO`, `ON`, `OFF`; audio settings `AUTO`, `MANUAL` |
 | `imaxHighPass`, `imaxLowPass` | IMAX crossover frequencies in Hz (e.g. `080` = 80 Hz) |
@@ -130,7 +131,7 @@ receiver are created. Zone 2/3: `frontLeft` and `frontRight`.
 | `frequency` (+ `frequencyUp`/`Down`) | frequency, FM in MHz (e.g. `106.9`), AM in kHz |
 | `stationName` | RDS station name |
 | `band`, `tuningMode` | band `FM`/`AM`, tuning `AUTO`/`MANUAL` |
-| `preset` (+ `presetUp`/`Down`) | station preset |
+| `preset` (+ `presetUp`/`Down`) | station preset, `0` = no preset (Marantz) |
 
 ### netAudio – network favorites (models without HEOS)
 

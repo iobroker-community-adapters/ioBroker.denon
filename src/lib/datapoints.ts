@@ -60,7 +60,7 @@ export interface Datapoint {
     common: DatapointCommon;
     /** onoff: protocol value for true (default "ON") */
     on?: string;
-    /** onoff: protocol value for false (default "OFF") */
+    /** onoff: protocol value for false (default "OFF"); int: protocol value shown as 0 */
     off?: string;
     /** int: number of digits of the protocol value (0 = no padding) */
     digits?: number;
@@ -564,6 +564,9 @@ export const DATAPOINTS: readonly Datapoint[] = [
         HI: 'High',
     }),
     int('main.audio.bassSync', 'PSBSC ', 'Bass sync', { min: 0, max: 16, unit: 'dB' }, { pattern: /^\d{2}$/ }),
+    // @KI_HINWEIS: Marantz Cinema (FY23/CY2022 protocol): auto lip sync "OPALSSET ON/OFF", query "OPALS ?".
+    // The also sent lines OPALSDSP/OPALSVAL are not documented and ignored.
+    onoff('main.audio.autoLipSync', 'OPALSSET ', 'Auto lip sync'),
     enumeration('main.audio.dacFilter', 'PSDACFIL ', 'DAC filter', { MODE1: 'Mode 1', MODE2: 'Mode 2' }),
     enumeration('main.audio.imax', 'PSIMAX ', 'IMAX mode', { AUTO: 'Auto', ON: 'On', OFF: 'Off' }),
     enumeration('main.audio.imaxAudio', 'PSIMAXAUD ', 'IMAX audio settings', { AUTO: 'Auto', MANUAL: 'Manual' }),
@@ -681,7 +684,8 @@ export const DATAPOINTS: readonly Datapoint[] = [
         { AUTO: 'Auto', MANUAL: 'Manual' },
         { pattern: /^(AUTO|MANUAL)$/ },
     ),
-    int('tuner.preset', 'TPAN', 'Tuner preset', { min: 1, max: 56 }, { pattern: /^\d{2}$/ }),
+    // @KI_HINWEIS: "TPANOFF" = no preset selected (seen on Marantz Cinema 60), shown as 0
+    int('tuner.preset', 'TPAN', 'Tuner preset', { min: 0, max: 56 }, { pattern: /^(\d{2}|OFF)$/, off: 'OFF' }),
     button('tuner.presetUp', 'TPANUP', 'Next preset', 'tuner.preset'),
     button('tuner.presetDown', 'TPANDOWN', 'Previous preset', 'tuner.preset'),
 
@@ -756,6 +760,9 @@ export function parseValue(dp: Datapoint, raw: string): ioBroker.StateValue | un
         case 'db':
             return /^\d{2,3}$/.test(raw) ? levelToDb(raw) : undefined;
         case 'int':
+            if (dp.off !== undefined && raw === dp.off) {
+                return 0;
+            }
             return /^\d+$/.test(raw) ? parseInt(raw, 10) * (dp.factor ?? 1) || 0 : undefined;
         case 'sleep':
             return raw === 'OFF' ? 0 : /^\d{3}$/.test(raw) ? parseInt(raw, 10) : undefined;
@@ -1034,6 +1041,7 @@ export const SETTING_QUERIES: readonly string[] = [
     'PSMDAX ?',
     'PSBSC ?',
     'PSDACFIL ?',
+    'OPALS ?',
     'PSIMAX ?',
     'PSIMAXAUD ?',
     'PSIMAXHPF ?',
@@ -1071,4 +1079,4 @@ export const NAME_QUERIES: readonly string[] = ['SSFUN ?', 'SSSOD ?', 'SSQSNZMA 
  * sent by Marantz Cinema models (seen on Cinema 60); not documented, therefore no state.
  */
 export const IGNORED_LINES =
-    /^(CVEND|OPV|OPINF|SY|TR|SV|NSET|SSVCT|SSSPC|SSLEV|SSLAN|SSHOS|SSTPN|PSEFF|PSRSZ|PSDEL |SSINFINS)/;
+    /^(CVEND|OPV|OPINF|OPALSDSP|OPALSVAL|SY|TR|SV|NSET|SSVCT|SSSPC|SSLEV|SSLAN|SSHOS|SSTPN|PSEFF|PSRSZ|PSDEL |SSINFINS)/;
