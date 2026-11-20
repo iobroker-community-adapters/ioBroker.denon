@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "denon",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "news": {
+      "2.0.3": {
+        "en": "Marantz Cinema: new setting Auto Lip Sync (main.audio.autoLipSync)\ntuner.preset shows 0 when no preset is selected\nREADME: for playback, now playing and cover on HEOS models use the HEOS adapter",
+        "de": "Marantz Cinema: neue Einstellung Auto Lip Sync (main.audio.autoLipSync)\ntuner.preset zeigt 0, wenn kein Senderspeicher gewählt ist\nREADME: für Wiedergabe, Titelanzeige und Cover bei HEOS-Modellen den HEOS-Adapter nutzen",
+        "ru": "Marantz Cinema: новая настройка Auto Lip Sync (main.audio.autoLipSync)\ntuner.preset показывает 0, если пресет не выбран\nREADME: для воспроизведения, информации о треке и обложки на моделях с HEOS используйте адаптер HEOS",
+        "pt": "Marantz Cinema: nova definição Auto Lip Sync (main.audio.autoLipSync)\ntuner.preset mostra 0 quando nenhuma predefinição está selecionada\nREADME: para reprodução, informação da faixa e capa em modelos HEOS use o adaptador HEOS",
+        "nl": "Marantz Cinema: nieuwe instelling Auto Lip Sync (main.audio.autoLipSync)\ntuner.preset toont 0 als er geen voorkeuzezender is gekozen\nREADME: gebruik voor afspelen, nummerinfo en cover op HEOS-modellen de HEOS-adapter",
+        "fr": "Marantz Cinema : nouveau réglage Auto Lip Sync (main.audio.autoLipSync)\ntuner.preset affiche 0 si aucun préréglage n'est sélectionné\nREADME : pour la lecture, le titre en cours et la pochette sur les modèles HEOS, utilisez l'adaptateur HEOS",
+        "it": "Marantz Cinema: nuova impostazione Auto Lip Sync (main.audio.autoLipSync)\ntuner.preset mostra 0 se non è selezionata alcuna preselezione\nREADME: per riproduzione, brano in corso e copertina sui modelli HEOS usare l'adattatore HEOS",
+        "es": "Marantz Cinema: nuevo ajuste Auto Lip Sync (main.audio.autoLipSync)\ntuner.preset muestra 0 si no hay ninguna presintonía seleccionada\nREADME: para reproducción, pista actual y carátula en modelos HEOS use el adaptador HEOS",
+        "pl": "Marantz Cinema: nowe ustawienie Auto Lip Sync (main.audio.autoLipSync)\ntuner.preset pokazuje 0, gdy nie wybrano żadnej stacji z pamięci\nREADME: do odtwarzania, informacji o utworze i okładki w modelach HEOS użyj adaptera HEOS",
+        "uk": "Marantz Cinema: нове налаштування Auto Lip Sync (main.audio.autoLipSync)\ntuner.preset показує 0, якщо пресет не вибрано\nREADME: для відтворення, інформації про трек і обкладинки на моделях з HEOS використовуйте адаптер HEOS",
+        "zh-cn": "Marantz Cinema：新增设置 Auto Lip Sync (main.audio.autoLipSync)\n未选择预设电台时 tuner.preset 显示 0\nREADME：HEOS 型号的播放控制、当前曲目和封面请使用 HEOS 适配器"
+      },
       "2.0.2": {
         "en": "new settings (Marantz Cinema and newer Denon models): M-DAX, IMAX Enhanced, DAC filter, illumination, Bass Sync\nshorter README: list of all states and upgrade table now in the docs folder",
         "de": "neue Einstellungen (Marantz Cinema und neuere Denon-Modelle): M-DAX, IMAX Enhanced, DAC-Filter, Beleuchtung, Bass Sync\nkürzere README: Liste aller Datenpunkte und Update-Tabelle jetzt im Ordner docs",
