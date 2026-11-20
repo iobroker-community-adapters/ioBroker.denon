@@ -97,6 +97,7 @@ Tip: give the receiver a fixed IP address in your router, so the address does no
 
 **Display, cover or playback buttons are missing**
 * Models with HEOS (from about 2016) do not provide this information via the control connection.
+* For playback control, now playing information and cover on these models use the [HEOS adapter](https://github.com/withstu/ioBroker.heos) in addition to this adapter. Both can run at the same time.
 
 ## Upgrading from 1.x
 
@@ -127,6 +128,7 @@ This adapter would not have been possible without the great work of @foxriver76 
 	### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
+* (Schimi1983) README: hint to the HEOS adapter for playback and now playing on HEOS models
 * (Schimi1983) Marantz Cinema: new state `main.audio.autoLipSync`, `tuner.preset` shows `0` when no preset is selected (`TPANOFF`)
 
 ### 2.0.2 (2026-11-19)
