@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "denon",
-    "version": "2.0.3",
+    "version": "2.0.4",
     "news": {
+      "2.0.4": {
+        "en": "new settings for the Bluetooth transmitter (headphones, newer models): on/off, output and level (main.audio.bluetoothTransmitter, bluetoothOutput, bluetoothLevel)",
+        "de": "neue Einstellungen für den Bluetooth-Sender (Kopfhörer, neuere Modelle): ein/aus, Ausgabe und Pegel (main.audio.bluetoothTransmitter, bluetoothOutput, bluetoothLevel)",
+        "ru": "новые настройки Bluetooth-передатчика (наушники, новые модели): вкл/выкл, вывод и уровень (main.audio.bluetoothTransmitter, bluetoothOutput, bluetoothLevel)",
+        "pt": "novas definições para o transmissor Bluetooth (auscultadores, modelos mais recentes): ligar/desligar, saída e nível (main.audio.bluetoothTransmitter, bluetoothOutput, bluetoothLevel)",
+        "nl": "nieuwe instellingen voor de Bluetooth-zender (koptelefoon, nieuwere modellen): aan/uit, uitvoer en niveau (main.audio.bluetoothTransmitter, bluetoothOutput, bluetoothLevel)",
+        "fr": "nouveaux réglages pour l'émetteur Bluetooth (casque, modèles récents) : marche/arrêt, sortie et niveau (main.audio.bluetoothTransmitter, bluetoothOutput, bluetoothLevel)",
+        "it": "nuove impostazioni per il trasmettitore Bluetooth (cuffie, modelli più recenti): on/off, uscita e livello (main.audio.bluetoothTransmitter, bluetoothOutput, bluetoothLevel)",
+        "es": "nuevos ajustes para el transmisor Bluetooth (auriculares, modelos recientes): encendido/apagado, salida y nivel (main.audio.bluetoothTransmitter, bluetoothOutput, bluetoothLevel)",
+        "pl": "nowe ustawienia nadajnika Bluetooth (słuchawki, nowsze modele): wł./wył., wyjście i poziom (main.audio.bluetoothTransmitter, bluetoothOutput, bluetoothLevel)",
+        "uk": "нові налаштування Bluetooth-передавача (навушники, новіші моделі): увімк./вимк., вихід і рівень (main.audio.bluetoothTransmitter, bluetoothOutput, bluetoothLevel)",
+        "zh-cn": "蓝牙发射器（耳机，较新型号）新设置：开/关、输出和电平 (main.audio.bluetoothTransmitter, bluetoothOutput, bluetoothLevel)"
+      },
       "2.0.3": {
         "en": "Marantz Cinema: new setting Auto Lip Sync (main.audio.autoLipSync)\ntuner.preset shows 0 when no preset is selected\nREADME: for playback, now playing and cover on HEOS models use the HEOS adapter",
         "de": "Marantz Cinema: neue Einstellung Auto Lip Sync (main.audio.autoLipSync)\ntuner.preset zeigt 0, wenn kein Senderspeicher gewählt ist\nREADME: für Wiedergabe, Titelanzeige und Cover bei HEOS-Modellen den HEOS-Adapter nutzen",
@@ -80,19 +93,6 @@
         "pl": "zaktualizowane zależności\ndodane informacje dotyczące poziomu dokładności i licencji\nustawiony niepoprawny obiekt 'denon.0'",
         "uk": "оновлені залежності\nдодано ярус та ліцензія\n`denon.0`",
         "zh-cn": "更新的依赖关系\n增加了分层和许可证信息\n固定无效对象`denon.0'"
-      },
-      "1.15.5": {
-        "en": "fixed issue on setting tuner frequency (closes #328)",
-        "de": "feste ausgabe zur einstellung der thunfischfrequenz (geschlossen #328)",
-        "ru": "фиксированный вопрос о настройке частоты тюнеров (закрывает #328)",
-        "pt": "problema fixo na definição de frequência de sintonizador (fecha #328)",
-        "nl": "vast probleem bij het instellen van tunerfrequentie (sluit #328)",
-        "fr": "problème fixe sur la fréquence de réglage du tuner (ferme #328)",
-        "it": "problema fisso sulla regolazione della frequenza del sintonizzatore (chiude #328)",
-        "es": "edición fija en la frecuencia de ajuste (cerca #328)",
-        "pl": "stały problem przy ustawianiu częstotliwości tunera (zamyka # 328)",
-        "uk": "виправлено проблему на встановлення частоти тюнера (закривається no328)",
-        "zh-cn": "设定调制器频率的固定期( 关闭 # 328)"
       }
     },
     "messages": [

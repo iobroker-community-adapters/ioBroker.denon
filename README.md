@@ -127,7 +127,7 @@ This adapter would not have been possible without the great work of @foxriver76 
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.0.4 (2026-11-24)
 * (Schimi1983) new states for the Bluetooth transmitter (headphones): `main.audio.bluetoothTransmitter`, `bluetoothOutput`, `bluetoothLevel`
 
 ### 2.0.3 (2026-11-20)
