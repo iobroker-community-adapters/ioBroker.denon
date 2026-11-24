@@ -97,6 +97,11 @@ describe('datapoints', () => {
             expect(m('PSIMAXSWO L+M')).to.deep.equal(['main.audio.imaxSubwooferOutput', 'L+M']);
             expect(m('ILB DAR')).to.deep.equal(['display.illumination', 'DAR']);
             expect(m('OPALSSET ON')).to.deep.equal(['main.audio.autoLipSync', true]);
+            expect(m('BTTX ON')).to.deep.equal(['main.audio.bluetoothTransmitter', true]);
+            expect(m('BTTX SP')).to.deep.equal(['main.audio.bluetoothOutput', 'SP']);
+            expect(m('BTLEV 80')).to.deep.equal(['main.audio.bluetoothLevel', 0]);
+            expect(m('BTLEV 30')).to.deep.equal(['main.audio.bluetoothLevel', -50]);
+            expect(m('BTLEV 90')).to.deep.equal(['main.audio.bluetoothLevel', 10]);
             expect(m('TPANOFF')).to.deep.equal(['tuner.preset', 0]);
             expect(m('TPAN05')).to.deep.equal(['tuner.preset', 5]);
             expect(m('PSNEURAL ON')).to.deep.equal(['main.audio.neuralX', true]);
@@ -182,6 +187,9 @@ describe('datapoints', () => {
             expect(cmd('main.audio.imaxSubwoofer', false)).to.deep.equal(['PSIMAXSWM OFF']);
             expect(cmd('display.illumination', 'Auto')).to.deep.equal(['ILB AUTO']);
             expect(cmd('main.audio.autoLipSync', true)).to.deep.equal(['OPALSSET ON']);
+            expect(cmd('main.audio.bluetoothTransmitter', false)).to.deep.equal(['BTTX OFF']);
+            expect(cmd('main.audio.bluetoothOutput', 'BT')).to.deep.equal(['BTTX BT']);
+            expect(cmd('main.audio.bluetoothLevel', -6)).to.deep.equal(['BTLEV 74']);
             expect(cmd('main.audio.cinemaEq', true)).to.deep.equal(['PSCINEMA EQ.ON']);
             expect(cmd('main.audio.multEq', 'Flat')).to.deep.equal(['PSMULTEQ:FLAT']);
             expect(cmd('main.video.hdmiResolution', '1080p 24 Hz')).to.deep.equal(['VSSCH10P24']);
