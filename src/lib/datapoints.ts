@@ -64,6 +64,8 @@ export interface Datapoint {
     off?: string;
     /** int: number of digits of the protocol value (0 = no padding) */
     digits?: number;
+    /** db: protocol value that means 0 dB (default 50, Bluetooth level: 80) */
+    dbZero?: number;
     /** int: multiplier between protocol value and state value (LFE: "10" = -10 dB) */
     factor?: number;
     /** Restricts the accepted values, needed if several entries share a prefix */
@@ -446,6 +448,17 @@ export const DATAPOINTS: readonly Datapoint[] = [
         DAR: 'Dark',
         OFF: 'Off',
     }),
+    // @KI_HINWEIS: Bluetooth transmitter (headphones), Denon CY2026 and Marantz Cinema protocols. "BTTX ?" answers
+    // with two lines (ON/OFF and SP/BT), both share the prefix and are told apart by the value.
+    onoff('main.audio.bluetoothTransmitter', 'BTTX ', 'Bluetooth transmitter (headphones)'),
+    enumeration('main.audio.bluetoothOutput', 'BTTX ', 'Bluetooth output', {
+        SP: 'Bluetooth + speakers',
+        BT: 'Bluetooth only',
+    }),
+    // BTLEV 30 ... 90 = -50 ... +10 dB in whole steps
+    (dp => ({ ...dp, dbZero: 80, common: { ...dp.common, step: 1 } }))(
+        db('main.audio.bluetoothLevel', 'BTLEV ', 'Bluetooth level', -50, 10),
+    ),
     // Marantz Cinema: illumination of the front panel
     enumeration('display.illumination', 'ILB ', 'Illumination', {
         AUTO: 'Auto',
@@ -757,8 +770,10 @@ export function parseValue(dp: Datapoint, raw: string): ioBroker.StateValue | un
         case 'enum':
         case 'text':
             return raw || undefined;
-        case 'db':
-            return /^\d{2,3}$/.test(raw) ? levelToDb(raw) : undefined;
+        case 'db': {
+            const db = /^\d{2,3}$/.test(raw) ? levelToDb(raw) : undefined;
+            return db === undefined ? undefined : db - ((dp.dbZero ?? 50) - 50);
+        }
         case 'int':
             if (dp.off !== undefined && raw === dp.off) {
                 return 0;
@@ -854,7 +869,7 @@ export function formatCommand(
         case 'db': {
             const n = Number(val);
             return Number.isFinite(n)
-                ? { commands: [`${dp.prefix}${dbToLevel(n)}`] }
+                ? { commands: [`${dp.prefix}${dbToLevel(n + ((dp.dbZero ?? 50) - 50))}`] }
                 : { error: `${dp.id} needs a number` };
         }
         case 'int': {
@@ -1013,6 +1028,8 @@ export const SETTING_QUERIES: readonly string[] = [
     'SPPR ?',
     'DIM ?',
     'ILB ?',
+    'BTTX ?',
+    'BTLEV ?',
     'MNMEN?',
     'CV?',
     'Z2CV?',
